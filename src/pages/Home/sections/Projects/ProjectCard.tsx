@@ -1,7 +1,8 @@
-import type { Project } from "../../types";
+import type { Project } from "../../../../types";
 import styles from "./Projects.module.css";
 
 type ProjectCardProps = { project: Project; index: number };
+
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <article className={styles.card}>
