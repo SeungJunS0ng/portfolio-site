@@ -6,7 +6,7 @@ export function ContactButton({ floating = false }: ContactButtonProps) {
   return (
     <a
       className={`${styles.button} ${floating ? styles.floating : ""}`}
-      href="mailto:seungjun@example.com"
+      href="mailto:john091122@naver.com"
     >
       연락하기 <span aria-hidden="true">↗</span>
     </a>
