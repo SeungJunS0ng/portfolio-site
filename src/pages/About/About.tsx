@@ -14,6 +14,14 @@ export function About() {
         복잡한 문제를 차분하게 정리하고, 오래 쓰고 싶은 경험을 설계하는
         프론트엔드 개발자입니다.
       </p>
+      <div className={styles.details}>
+        <p>
+          <strong>학력</strong> 컴퓨터공학 전공
+        </p>
+        <p>
+          <strong>자격증</strong> 웹디자인기능사
+        </p>
+      </div>
       <ContactButton />
     </section>
   );

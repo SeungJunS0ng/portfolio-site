@@ -15,3 +15,10 @@
   transform: translateY(-2px);
   background: var(--blue-700);
 }
+.floating {
+  position: fixed;
+  right: 24px;
+  bottom: 80px;
+  z-index: 5;
+  box-shadow: 0 8px 20px #26458533;
+}

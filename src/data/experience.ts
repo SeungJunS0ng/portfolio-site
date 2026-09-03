@@ -7,6 +7,7 @@ export const experience: Experience[] = [
     company: "AutoEver Mobility WebApp DevCamp",
     description:
       "사용자 흐름을 관찰하고, 빠르고 명확한 웹 인터페이스로 구현합니다.",
+    projectId: "mobility-webapp",
   },
   {
     period: "2023 — 2024",

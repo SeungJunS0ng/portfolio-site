@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(28rem, 1fr));
+  gap: 1.5rem;
   margin-top: 48px;
 }
 .card {
@@ -27,10 +27,36 @@
   margin-bottom: 12px;
   font: var(--font-h2);
 }
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  vertical-align: middle;
+  font: var(--font-small);
+}
 .card p {
   max-width: 340px;
   opacity: 0.8;
   font: var(--font-body2);
+}
+.meta {
+  margin-top: 10px;
+  font-size: 14px !important;
+}
+.highlights {
+  margin: 18px 0;
+  padding-left: 18px;
+  list-style: disc;
+  font: var(--font-body3);
+}
+.links {
+  display: flex;
+  gap: 18px;
+  font: var(--font-body2);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .stack {
   display: flex;
@@ -49,7 +75,7 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-@media (max-width: 650px) {
+@media (max-width: 960px) {
   .grid {
     grid-template-columns: 1fr;
     margin-top: 30px;

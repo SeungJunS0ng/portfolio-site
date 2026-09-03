@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 100px 0;
+  padding: 7.5rem 0 6rem;
   background:
     radial-gradient(circle at 85% 30%, var(--yellow-200), transparent 28%),
     linear-gradient(135deg, var(--blue-50), var(--gray-0) 60%);
@@ -31,6 +31,17 @@ h1 em {
   color: var(--gray-700);
   font: var(--font-body1);
 }
+.details {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+  color: var(--gray-700);
+  font: var(--font-body2);
+}
+.details strong {
+  margin-right: 8px;
+  color: var(--gray-900);
+}
 @media (max-width: 720px) {
   .section {
     min-height: 620px;
@@ -41,5 +52,9 @@ h1 em {
   }
   .description {
     font-size: 16px;
+  }
+  .details {
+    flex-direction: column;
+    gap: 6px;
   }
 }

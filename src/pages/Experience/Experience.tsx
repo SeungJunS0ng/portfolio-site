@@ -1,7 +1,9 @@
 import { experience } from "../../data/experience";
+import { useScrollTo } from "../../hooks/useScrollTo";
 import styles from "./Experience.module.css";
 
 export function Experience() {
+  const scrollTo = useScrollTo();
   return (
     <section id="experience" className="section">
       <p className="section-label">03 / EXPERIENCE</p>
@@ -18,6 +20,14 @@ export function Experience() {
               <h3>{item.role}</h3>
               <p className={styles.company}>{item.company}</p>
               <p>{item.description}</p>
+              {item.projectId && (
+                <button
+                  className={styles.projectLink}
+                  onClick={() => scrollTo("projects")}
+                >
+                  프로젝트 보기 ↗
+                </button>
+              )}
             </div>
           </article>
         ))}

@@ -1,4 +1,5 @@
 import { Footer } from "./components/common/Footer/Footer";
+import { ContactButton } from "./components/common/ContactButton/ContactButton";
 import { Header } from "./components/common/Header/Header";
 import { TopButton } from "./components/common/TopButton/TopButton";
 import { navigation } from "./data/navigation";
@@ -23,13 +24,14 @@ function App() {
       />
       <main>
         <About />
-        <Skills />
         <Experience />
+        <Skills />
         <Projects />
         <Archive />
         <Contact />
       </main>
       <Footer />
+      <ContactButton floating />
       <TopButton />
     </>
   );
