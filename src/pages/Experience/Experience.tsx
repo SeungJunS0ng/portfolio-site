@@ -8,9 +8,9 @@ export function Experience() {
     <section id="experience" className="section">
       <p className="section-label">02 / EXPERIENCE</p>
       <h2>
-        배운 것을 쌓고,
+        데이터를 흐르게 만들고,
         <br />
-        다음 장면으로 옮깁니다.
+        운영 상태까지 확인합니다.
       </h2>
       <div className={styles.timeline}>
         {experience.map((item) => (
