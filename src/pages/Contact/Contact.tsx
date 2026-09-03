@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 
 export function Contact() {
   return (
-    <section id="contact" className={styles.section}>
+    <section id="contact" className={`section ${styles.section}`}>
       <p className="section-label">05 / CONTACT</p>
       <h2>
         함께 해결할 문제를
