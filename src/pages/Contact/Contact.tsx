@@ -3,7 +3,7 @@ import styles from "./Contact.module.css";
 export function Contact() {
   return (
     <section id="contact" className={styles.section}>
-      <p className="section-label">06 / CONTACT</p>
+      <p className="section-label">05 / CONTACT</p>
       <h2>
         좋은 문제를 함께
         <br />
