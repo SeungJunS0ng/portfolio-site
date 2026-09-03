@@ -12,7 +12,7 @@ export function Header({ items, activeId, onNavigate }: HeaderProps) {
   return (
     <header className={styles.header}>
       <a className={styles.logo} href="#about">
-        SJ<span>.</span>
+        Portfolio<span>.</span>
       </a>
       <Navigation items={items} activeId={activeId} onNavigate={onNavigate} />
     </header>
