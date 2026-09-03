@@ -1,9 +1,10 @@
-import { experience } from "../../data/experience";
-import { useScrollTo } from "../../hooks/useScrollTo";
+import { experience } from "../../../../data/experience";
+import { useScrollTo } from "../../../../hooks/useScrollTo";
 import styles from "./Experience.module.css";
 
 export function Experience() {
   const scrollTo = useScrollTo();
+
   return (
     <section id="experience" className="section">
       <p className="section-label">02 / EXPERIENCE</p>
