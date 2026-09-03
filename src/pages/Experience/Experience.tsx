@@ -6,7 +6,7 @@ export function Experience() {
   const scrollTo = useScrollTo();
   return (
     <section id="experience" className="section">
-      <p className="section-label">03 / EXPERIENCE</p>
+      <p className="section-label">02 / EXPERIENCE</p>
       <h2>
         배운 것을 쌓고,
         <br />
