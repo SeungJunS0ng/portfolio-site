@@ -5,20 +5,18 @@ export function Contact() {
     <section id="contact" className={styles.section}>
       <p className="section-label">05 / CONTACT</p>
       <h2>
-        좋은 문제를 함께
+        함께 해결할 문제를
         <br />
-        <span>풀어보고 싶습니다.</span>
+        <span>기다리고 있습니다.</span>
       </h2>
-      <a className={styles.email} href="mailto:seungjun@example.com">
-        seungjun@example.com ↗
+      <a className={styles.email} href="mailto:john091122@naver.com">
+        john091122@naver.com ↗
       </a>
       <div className={styles.links}>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">
+        <a href="https://github.com/SeungJunS0ng" target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-          LinkedIn
-        </a>
+        <a href="tel:01062410923">010-6241-0923</a>
       </div>
     </section>
   );
