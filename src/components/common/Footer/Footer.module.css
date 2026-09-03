@@ -1,14 +1,2 @@
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 28px 0;
-  color: var(--gray-500);
-  font: var(--font-small);
-  border-top: 1px solid var(--gray-100);
-}
-@media (max-width: 560px) {
-  .footer {
-    flex-direction: column;
-  }
-}
+.footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem 3rem; color: var(--gray-500); font: var(--font-small); border-top: 2px solid var(--gray-900); }
+@media (max-width: 560px) { .footer { flex-direction: column; padding: 1.5rem; } }
