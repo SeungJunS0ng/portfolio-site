@@ -7,9 +7,9 @@ export function Projects() {
     <section id="projects" className="section">
       <p className="section-label">04 / PROJECTS</p>
       <h2>
-        아이디어를 실제 화면으로
+        문제를 데이터와 운영 흐름으로
         <br />
-        옮긴 기록입니다.
+        분해한 프로젝트입니다.
       </h2>
       <div className={styles.grid}>
         {projects.map((project, index) => (
