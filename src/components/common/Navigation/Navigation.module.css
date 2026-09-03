@@ -1,4 +1,4 @@
 .list { display: flex; gap: 1.25rem; }
-.list button { min-height: 2.5rem; color: var(--gray-500); font: var(--font-small); transition: color 0.2s; }
-.list button:hover, .list .active { color: var(--blue-700); font-weight: 700; }
+.list button { min-height: 2.5rem; color: var(--gray-500); font: var(--font-nav); transition: color 0.2s; }
+.list button:hover, .list .active { color: var(--blue-700); font: var(--font-nav-strong); }
 @media (max-width: 720px) { .list { width: 100%; gap: 1rem; overflow-x: auto; } .list button { white-space: nowrap; } }
