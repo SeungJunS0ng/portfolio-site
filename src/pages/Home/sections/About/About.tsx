@@ -1,4 +1,4 @@
-import { ContactButton } from "../../components/common/ContactButton/ContactButton";
+import { ContactButton } from "../../../../components/common/ContactButton/ContactButton";
 import styles from "./About.module.css";
 
 export function About() {
