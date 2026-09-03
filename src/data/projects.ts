@@ -2,27 +2,37 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    id: "mobility-webapp",
-    title: "Mobility WebApp",
-    badge: "DevCamp",
-    description: "이동 경험을 더 직관적으로 만드는 반응형 웹 서비스입니다.",
-    period: "2024",
-    role: "Frontend Developer",
-    stack: ["React", "TypeScript", "CSS"],
+    id: "portfolio-site",
+    title: "Developer Portfolio",
+    badge: "1차 프로젝트",
+    description:
+      "소개부터 문제 해결 기록까지, 개발 과정과 역량을 한 화면의 흐름으로 전달하는 반응형 포트폴리오입니다.",
+    period: "2026. 09. 02 — 09. 09",
+    role: "기획 · 디자인 · 프론트엔드 개발",
+    stack: ["React", "TypeScript", "CSS Modules", "Vercel"],
     link: "https://github.com/",
     demo: "https://github.com/",
-    highlights: ["반응형 화면 설계", "재사용 가능한 컴포넌트 구성"],
+    highlights: [
+      "IntersectionObserver 기반 현재 섹션 네비게이션",
+      "데이터와 UI를 분리한 재사용 가능한 컴포넌트 구조",
+      "데스크톱과 모바일 화면을 고려한 반응형 레이아웃",
+    ],
   },
   {
-    id: "portfolio-archive",
-    title: "Portfolio Archive",
+    id: "problem-solving-archive",
+    title: "Problem Solving Archive",
+    badge: "차별화 기능",
     description:
-      "작업 과정과 문제 해결의 맥락을 한곳에 기록하는 아카이브입니다.",
-    period: "2023 — 2024",
-    role: "Frontend Developer",
-    stack: ["Vite", "React", "Design System"],
+      "문제의 원인, 해결 과정, 코드를 Markdown으로 기록하고 상태별로 다시 찾아볼 수 있는 아카이브입니다.",
+    period: "2026. 09",
+    role: "기능 기획 · 상태 관리 · UI 구현",
+    stack: ["React", "TypeScript", "React Markdown", "Supabase"],
     link: "https://github.com/",
     demo: "https://github.com/",
-    highlights: ["Markdown 기반 기록", "읽기 쉬운 정보 구조"],
+    highlights: [
+      "본문과 코드 블록을 Markdown 문자열로 조합",
+      "미해결·해결완료 상태에 따른 조건부 렌더링",
+      "Supabase 저장 구조를 고려한 게시글 데이터 모델링",
+    ],
   },
 ];
