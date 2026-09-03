@@ -5,7 +5,7 @@ export function Skills() {
   const categories = [...new Set(skills.map((skill) => skill.category))];
   return (
     <section id="skills" className="section">
-      <p className="section-label">02 / SKILLS</p>
+      <p className="section-label">03 / SKILLS</p>
       <h2>
         도구보다 중요한 건<br />
         문제를 바라보는 방식입니다.
