@@ -16,18 +16,26 @@ const initialPosts: ArchivePost[] = [
   {
     id: 1,
     status: "closed",
-    date: "2026. 08. 24",
-    title: "컴포넌트 경계를 먼저 정하면 CSS가 단순해진다.",
+    date: "2026. 09. 03",
+    title: "스크롤 네비게이션에서 헤더 높이만큼 위치를 보정했다.",
     contentMd:
-      "문제를 화면 단위가 아니라 **책임 단위**로 나누면 스타일의 영향 범위도 줄어든다.",
+      "고정 헤더가 섹션 제목을 가리지 않도록 스크롤 위치에서 헤더 높이를 뺐다. 현재 섹션 표시는 `IntersectionObserver`로 분리해 메뉴와 화면 상태가 함께 바뀌도록 했다.",
   },
   {
     id: 2,
-    status: "open",
-    date: "2026. 08. 12",
-    title: "사용자의 한 번의 클릭을 줄이는 것이 가장 좋은 최적화다.",
+    status: "closed",
+    date: "2026. 09. 02",
+    title: "문제 해결 기록을 Markdown 문자열로 저장할 수 있게 구성했다.",
     contentMd:
-      "작은 실험을 빠르게 배포하고 관찰한다.\n\n- 흐름을 기록한다\n- 한 가지씩 바꾼다",
+      "본문과 선택 입력한 코드를 하나의 Markdown으로 조합한다. 저장된 데이터는 `ReactMarkdown`과 GFM 플러그인으로 렌더링해, 글과 코드 블록을 같은 흐름에서 읽을 수 있다.",
+  },
+  {
+    id: 3,
+    status: "open",
+    date: "2026. 09. 02",
+    title: "Archive 게시글을 Supabase에 연결할 데이터 구조를 정리 중이다.",
+    contentMd:
+      "게시글은 `content_md`, `status`, `created_at`을 중심으로 저장한다. 현재는 UI와 상태 흐름을 먼저 검증하고, 환경 변수 설정 후 Supabase 연동을 진행한다.",
   },
 ];
 
