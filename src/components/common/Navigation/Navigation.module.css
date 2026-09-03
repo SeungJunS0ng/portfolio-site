@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  gap: 22px;
+}
+.list button {
+  color: var(--gray-500);
+  font: var(--font-small);
+  transition: color 0.2s;
+}
+.list button:hover,
+.list .active {
+  color: var(--blue-900);
+}
+@media (max-width: 720px) {
+  .list {
+    gap: 12px;
+    overflow-x: auto;
+  }
+  .list button {
+    font-size: 12px;
+  }
+}

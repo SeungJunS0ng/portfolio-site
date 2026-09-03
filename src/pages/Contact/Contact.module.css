@@ -1,0 +1,24 @@
+.section {
+  padding-bottom: 120px;
+}
+.section h2 span {
+  color: var(--blue-700);
+}
+.email {
+  display: inline-block;
+  margin-top: 38px;
+  color: var(--blue-900);
+  font: var(--font-body1);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.links {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  color: var(--gray-500);
+  font: var(--font-small);
+}
+.links a:hover {
+  color: var(--blue-700);
+}

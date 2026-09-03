@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  color: white;
+  background: var(--blue-900);
+  border-radius: var(--radius-sm);
+  font: var(--font-body2);
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+}

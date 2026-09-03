@@ -1,0 +1,13 @@
+.button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 5;
+  width: 44px;
+  aspect-ratio: 1;
+  color: white;
+  background: var(--blue-900);
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 8px 20px #26458533;
+}

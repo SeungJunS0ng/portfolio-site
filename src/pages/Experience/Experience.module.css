@@ -1,0 +1,33 @@
+.timeline {
+  margin-top: 48px;
+  border-top: 1px solid var(--gray-300);
+}
+.item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 30px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.item time {
+  color: var(--blue-700);
+  font: var(--font-body2);
+}
+.item h3 {
+  font: var(--font-h3);
+}
+.item p {
+  margin-top: 10px;
+  color: var(--gray-700);
+  font: var(--font-body2);
+}
+.item .company {
+  margin-top: 3px;
+  color: var(--gray-500);
+}
+@media (max-width: 600px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
