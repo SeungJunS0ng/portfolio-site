@@ -7,21 +7,22 @@ export function Skills() {
     <section id="skills" className="section">
       <p className="section-label">03 / SKILLS</p>
       <h2>
-        도구보다 중요한 건<br />
-        문제를 바라보는 방식입니다.
+        서비스의 흐름을 구성하는<br />
+        기술 스택입니다.
       </h2>
       <div className={styles.grid}>
         {categories.map((category) => (
           <div key={category} className={styles.group}>
             <h3>{category}</h3>
-            {skills
-              .filter((skill) => skill.category === category)
-              .map((skill) => (
-                <div className={styles.skill} key={skill.name}>
-                  <span>{skill.name}</span>
-                  <small>{skill.level}</small>
-                </div>
-              ))}
+            <ul className={styles.tags}>
+              {skills
+                .filter((skill) => skill.category === category)
+                .map((skill) => (
+                  <li key={skill.name} title={skill.level}>
+                    {skill.name}
+                  </li>
+                ))}
+            </ul>
           </div>
         ))}
       </div>
