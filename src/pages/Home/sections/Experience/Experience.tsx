@@ -19,7 +19,10 @@ export function Experience() {
             <time>{item.period}</time>
             <div>
               <h3>{item.role}</h3>
-              <p className={styles.company}>{item.company}</p>
+              <p className={styles.company}>
+                {item.company}
+                {item.isPlaceholder && <span>예시</span>}
+              </p>
               <p>{item.description}</p>
               {item.projectId && (
                 <button
