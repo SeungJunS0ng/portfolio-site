@@ -10,6 +10,14 @@ export type Experience = {
   company: string;
   description: string;
   projectId?: string;
+  isPlaceholder?: boolean;
+};
+
+export type Certification = {
+  name: string;
+  organization: string;
+  acquiredAt: string;
+  isPlaceholder?: boolean;
 };
 
 export type Project = {
