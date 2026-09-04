@@ -1,4 +1,5 @@
 import { ContactButton } from "../../../../components/common/ContactButton/ContactButton";
+import { certifications } from "../../../../data/certifications";
 import styles from "./About.module.css";
 
 export function About() {
@@ -15,6 +16,20 @@ export function About() {
         캐시, 운영 환경을 직접 다룹니다. 데이터가 보이지 않을 때는 저장·캐시·
         메시지·배포 상태를 분리해 원인을 좁혀갑니다.
       </p>
+      <div className={styles.certifications}>
+        <p className={styles.certificationTitle}>CERTIFICATIONS</p>
+        <ul>
+          {certifications.map((certification) => (
+            <li key={certification.name}>
+              <strong>{certification.name}</strong>
+              <span>
+                {certification.organization} · {certification.acquiredAt}
+              </span>
+              {certification.isPlaceholder && <em>예시 데이터</em>}
+            </li>
+          ))}
+        </ul>
+      </div>
       <ContactButton />
     </section>
   );

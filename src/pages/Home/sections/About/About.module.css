@@ -3,4 +3,10 @@
 h1 { max-width: 52rem; font: var(--font-display); letter-spacing: -0.04em; }
 h1 em { color: var(--blue-700); font-style: normal; }
 .description { max-width: 42rem; margin: 1.5rem 0 2rem; color: var(--gray-700); font: var(--font-body1); }
+.certifications { width: min(100%, 42rem); margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: var(--blue-50); border-radius: var(--radius-md); }
+.certificationTitle { margin-bottom: 0.75rem; color: var(--blue-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
+.certifications ul { display: grid; gap: 0.5rem; }
+.certifications li { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; color: var(--gray-700); font: var(--font-small); }
+.certifications strong { color: var(--gray-900); font-weight: 700; }
+.certifications em { padding: 0.125rem 0.375rem; color: var(--gray-700); background: var(--gray-100); border-radius: var(--radius-sm); font-style: normal; }
 @media (max-width: 720px) { .section { min-height: 33rem; padding: 5rem 1.5rem; } h1 { font-size: 2.5rem; } }
