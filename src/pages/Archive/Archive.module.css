@@ -8,6 +8,7 @@
 .content > p:not(:global(.section-label)) { margin-bottom: 2rem; color: var(--gray-700); font: var(--font-body2); }
 .content a { color: var(--blue-700); font: var(--font-body2); font-weight: 700; text-decoration: underline; text-underline-offset: 0.25rem; }
 .list { display: grid; gap: 1rem; margin: 2rem 0; }
+.loadMoreIndicator { min-height: 3rem; margin-bottom: 2rem; color: var(--gray-500); font: var(--font-small); text-align: center; }
 
 .filters {
   display: flex;

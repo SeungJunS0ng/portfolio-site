@@ -3,16 +3,25 @@ import type {
   ArchiveComment,
   ArchivePost,
   ArchivePostInput,
+  ArchivePostsPage,
   ArchiveStatus,
 } from "../types";
 
+export const ARCHIVE_POSTS_PAGE_SIZE = 10;
+
 export async function getArchivePosts(
   status: ArchiveStatus | null = null,
-): Promise<ArchivePost[]> {
+  page = 0,
+): Promise<ArchivePostsPage> {
+  const from = page * ARCHIVE_POSTS_PAGE_SIZE;
+  const to = from + ARCHIVE_POSTS_PAGE_SIZE;
+
   let query = supabase
-    .from("archive_posts")
-    .select("id, title, content, tags, status, created_at, archive_comments(count)")
-    .order("created_at", { ascending: false });
+    .from("archive_post_summaries")
+    .select("id, title, excerpt, tags, status, created_at, comment_count")
+    .order("created_at", { ascending: false })
+    .order("id", { ascending: false })
+    .range(from, to);
 
   if (status !== null) {
     query = query.eq("status", status);
@@ -24,10 +33,12 @@ export async function getArchivePosts(
     throw error;
   }
 
-  return (data ?? []).map(({ archive_comments, ...post }) => ({
-    ...post,
-    comment_count: archive_comments?.[0]?.count ?? 0,
-  })) as ArchivePost[];
+  const posts = (data ?? []) as ArchivePostsPage["posts"];
+
+  return {
+    posts: posts.slice(0, ARCHIVE_POSTS_PAGE_SIZE),
+    hasNextPage: posts.length > ARCHIVE_POSTS_PAGE_SIZE,
+  };
 }
 
 export async function getArchivePostById(

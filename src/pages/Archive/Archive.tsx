@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { useArchivePosts } from "../../hooks/useArchivePosts";
 import { useUpdateArchivePostStatus } from "../../hooks/useUpdateArchivePostStatus";
 import styles from "./Archive.module.css";
 import { ArchiveCard } from "./components/ArchiveCard/ArchiveCard";
-import { useState } from "react";
 import type { ArchiveStatus } from "../../types";
 import { AdminPasswordModal } from "./components/AdminPasswordModal/AdminPasswordModal";
 
 export function Archive() {
   const [status, setStatus] = useState<ArchiveStatus | null>(null);
-  const { data: posts, isPending, isError } = useArchivePosts(status);
+  const {
+    data,
+    isPending,
+    isError,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = useArchivePosts(status);
   const updateStatus = useUpdateArchivePostStatus();
+  const loadMoreRef = useRef<HTMLDivElement>(null);
   const [statusTarget, setStatusTarget] = useState<{
     id: string;
     status: ArchiveStatus;
@@ -25,6 +33,23 @@ export function Archive() {
   function handleStatusToggle(postId: string, currentStatus: ArchiveStatus) {
     setStatusTarget({ id: postId, status: currentStatus });
   }
+
+  const posts = data?.pages.flatMap((page) => page.posts) ?? [];
+
+  useEffect(() => {
+    const target = loadMoreRef.current;
+    if (!target || !hasNextPage || isFetchingNextPage) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) fetchNextPage();
+      },
+      { rootMargin: "240px" },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
   return (
     <main className={styles.page}>
@@ -72,24 +97,31 @@ export function Archive() {
 
         {!isPending && !isError && (
           <>
-            {posts?.length === 0 ? (
+            {posts.length === 0 ? (
               <p>
                 {status === null
                   ? "등록된 글이 없습니다."
                   : "선택한 상태의 글이 없습니다."}
               </p>
             ) : (
-              <ul className={styles.list}>
-                {posts?.map((post) => (
-                  <li key={post.id}>
-                    <ArchiveCard
-                      post={post}
-                      isStatusUpdating={updateStatus.isPending}
-                      onStatusToggle={handleStatusToggle}
-                    />
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className={styles.list}>
+                  {posts.map((post) => (
+                    <li key={post.id}>
+                      <ArchiveCard
+                        post={post}
+                        isStatusUpdating={updateStatus.isPending}
+                        onStatusToggle={handleStatusToggle}
+                      />
+                    </li>
+                  ))}
+                </ul>
+                {hasNextPage && (
+                  <div ref={loadMoreRef} className={styles.loadMoreIndicator} role="status">
+                    {isFetchingNextPage ? "글을 더 불러오는 중입니다." : ""}
+                  </div>
+                )}
+              </>
             )}
           </>
         )}

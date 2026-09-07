@@ -1,16 +1,8 @@
 import styles from "./ArchiveCard.module.css";
-import type { ArchiveStatus } from "../../../../types";
+import type { ArchivePostSummary, ArchiveStatus } from "../../../../types";
 import { Link } from "react-router-dom";
 type ArchiveCardProps = {
-  post: {
-    id: string;
-    title: string;
-    content: string;
-    tags: string[];
-    status: ArchiveStatus;
-    created_at: string;
-    comment_count?: number;
-  };
+  post: ArchivePostSummary;
   isStatusUpdating: boolean;
   onStatusToggle: (postId: string, status: ArchiveStatus) => void;
 };
@@ -21,9 +13,6 @@ export function ArchiveCard({
   onStatusToggle,
 }: ArchiveCardProps) {
   const isResolved = post.status === "resolved";
-  const previewContent =
-    post.content.length > 120 ? post.content.slice(0, 120) : post.content;
-
   const createdAt = new Date(post.created_at).toLocaleDateString("ko-KR", {
     year: "numeric",
     month: "2-digit",
@@ -42,7 +31,7 @@ export function ArchiveCard({
         </div>
 
         <p className={styles.preview}>
-          {previewContent}{" "}
+          {post.excerpt}{" "}
           <Link className={styles.moreLink} to={`/archive/${post.id}`}>
             ... 더보기
           </Link>

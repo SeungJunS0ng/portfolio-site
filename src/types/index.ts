@@ -54,6 +54,19 @@ export type ArchivePost = {
   comment_count?: number;
 };
 
+export type ArchivePostSummary = Pick<
+  ArchivePost,
+  "id" | "title" | "tags" | "status" | "created_at"
+> & {
+  excerpt: string;
+  comment_count: number;
+};
+
+export type ArchivePostsPage = {
+  posts: ArchivePostSummary[];
+  hasNextPage: boolean;
+};
+
 export type ArchiveComment = {
   id: string;
   post_id: string;

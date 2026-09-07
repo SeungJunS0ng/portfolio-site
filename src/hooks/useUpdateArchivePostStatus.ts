@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { runArchiveAction } from "../api/archive";
-import type { ArchiveStatus } from "../types";
+import type { ArchivePostsPage, ArchiveStatus } from "../types";
 
 export function useUpdateArchivePostStatus() {
   const queryClient = useQueryClient();
@@ -22,13 +22,19 @@ export function useUpdateArchivePostStatus() {
       });
 
       queryClient.setQueriesData({ queryKey: ["archivePosts"] }, (data) => {
-        if (!Array.isArray(data)) return data;
+        if (!data || typeof data !== "object" || !("pages" in data)) return data;
 
-        return data.map((post) =>
-          post && typeof post === "object" && "id" in post && post.id === id
-            ? { ...post, status }
-            : post,
-        );
+        const infiniteData = data as { pages: ArchivePostsPage[]; pageParams: unknown[] };
+
+        return {
+          ...infiniteData,
+          pages: infiniteData.pages.map((page) => ({
+            ...page,
+            posts: page.posts.map((post) =>
+              post.id === id ? { ...post, status } : post,
+            ),
+          })),
+        };
       });
 
       return { previousQueries };

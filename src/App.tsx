@@ -10,8 +10,7 @@ import {
 import { Header } from "./components/common/Header/Header";
 import { navigation } from "./data/navigation";
 import { useActiveSection } from "./hooks/useActiveSection";
-import { getArchivePosts } from "./api/archive";
-import { ARCHIVE_POSTS_STALE_TIME } from "./hooks/useArchivePosts";
+import { archivePostsQueryOptions } from "./hooks/useArchivePosts";
 import { Home } from "./pages/Home/Home";
 
 const Archive = lazy(() =>
@@ -37,11 +36,7 @@ function AppLayout() {
     if (id !== "archive") return;
 
     void import("./pages/Archive/Archive");
-    void queryClient.prefetchQuery({
-      queryKey: ["archivePosts", null],
-      queryFn: () => getArchivePosts(),
-      staleTime: ARCHIVE_POSTS_STALE_TIME,
-    });
+    void queryClient.prefetchInfiniteQuery(archivePostsQueryOptions(null));
   }, [queryClient]);
 
   const handleNavigate = useCallback(
