@@ -1,6 +1,5 @@
 .section { min-height: 40rem; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr); gap: 4rem; align-items: center; padding: 6rem 3rem; }
 .content { display: flex; flex-direction: column; align-items: flex-start; }
-.sectionLabel { margin-bottom: 0.75rem; color: var(--blue-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .sectionTitle { position: relative; width: min(100%, 42rem); padding-bottom: 0.875rem; border-bottom: 2px solid var(--blue-100); font: var(--font-h1); letter-spacing: -0.04em; }
 .sectionTitle::after { position: absolute; bottom: -2px; left: 0; width: 5rem; height: 2px; content: ""; background: var(--blue-700); }
 .introduction { max-width: 34rem; margin-top: 1.5rem; padding-left: 1rem; color: var(--gray-700); border-left: 3px solid var(--blue-300); font: var(--font-body2); line-height: 1.7; }
