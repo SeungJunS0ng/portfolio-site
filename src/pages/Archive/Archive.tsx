@@ -21,7 +21,11 @@ export function Archive() {
         <p className="section-label">06 / ARCHIVE</p>
         <h1>Archive</h1>
 
-        <div className={styles.filters} role="group" aria-label="해결 상태 필터">
+        <div
+          className={styles.filters}
+          role="group"
+          aria-label="해결 상태 필터"
+        >
           <button
             type="button"
             className={`${styles.filterButton} ${status === "resolved" ? styles.selected : ""}`}
@@ -60,7 +64,10 @@ export function Archive() {
               <ul className={styles.list}>
                 {posts?.map((post) => (
                   <li key={post.id}>
-                    <ArchiveCard post={post} />
+                    <ArchiveCard
+                      post={post}
+                      onStatusClick={handleFilterClick}
+                    />
                   </li>
                 ))}
               </ul>
