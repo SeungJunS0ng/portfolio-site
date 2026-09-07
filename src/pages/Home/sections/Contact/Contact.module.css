@@ -1,5 +1,79 @@
-.section { padding-bottom: 6rem; }
-.section h2 span { color: var(--blue-700); }
-.email { display: inline-flex; align-items: center; min-height: 3.5rem; margin-top: 2rem; padding: 0 1.25rem; color: white; background: var(--blue-700); border-radius: var(--radius-sm); font: var(--font-body2); font-weight: 700; }
-.links { display: flex; gap: 1rem; margin-top: 1rem; color: var(--gray-700); font: var(--font-body2); }
-.links a { padding-bottom: 0.25rem; border-bottom: 1px solid var(--gray-900); }
+.section {
+  padding-bottom: 6rem;
+}
+
+.description {
+  margin-top: 0.75rem;
+  color: var(--gray-700);
+  font: var(--font-small);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 12rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--blue-700);
+  background: var(--blue-100);
+  border-radius: var(--radius-sm);
+}
+
+.icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.label,
+.caption {
+  color: var(--gray-700);
+  font: var(--font-small);
+}
+
+.value {
+  margin: 0.25rem 0;
+  color: var(--gray-900);
+  font: var(--font-body2);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.card:hover {
+  border-color: var(--blue-700);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 4px;
+}
+
+.message {
+  margin-top: 2rem;
+  color: var(--blue-700);
+  font: var(--font-small);
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
