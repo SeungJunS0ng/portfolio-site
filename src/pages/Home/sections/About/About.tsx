@@ -4,23 +4,29 @@ export function About() {
   return (
     <section id="about" className={styles.section}>
       <div className={styles.content}>
-        <p className="section-label">01 / ABOUT</p>
-        <h1 className={styles.sectionTitle}>송승준</h1>
+        <h1 className={styles.sectionTitle}>ABOUT ME</h1>
         <p className={styles.introduction}>
-          안정적인 데이터 흐름과 효율적인 API 설계를 고민하는 백엔드 개발자입니다.
-          Spring Boot와 JPA를 기반으로 도메인 API를 구현하고, 문제 상황에서는
-          저장·캐시·메시지·배포 상태를 나누어 원인을 찾습니다.
+          안정적인 데이터 흐름과 효율적인 API 설계를 고민하는 백엔드 개발자
+          <strong> 송승준</strong>입니다.
         </p>
         <dl className={styles.profileDetails}>
           <div>
             <dt>학력</dt>
-            <dd>
-              00대학교 <span>컴퓨터공학과</span>
-            </dd>
+            <dd>00대학교</dd>
           </div>
           <div>
             <dt>자격사항</dt>
             <dd>정보처리기사 · SQLD</dd>
+          </div>
+          <div className={styles.contactDetails}>
+            <dt>Phone &amp; Email &amp; GitHub</dt>
+            <dd>
+              <a href="tel:01012345678">☎ 010-1234-5678</a>
+              <a href="mailto:john091122@naver.com">✉ john091122@naver.com</a>
+              <a href="https://github.com/SeungJunS0ng" target="_blank" rel="noreferrer">
+                GitHub github.com/SeungJunS0ng
+              </a>
+            </dd>
           </div>
         </dl>
       </div>
