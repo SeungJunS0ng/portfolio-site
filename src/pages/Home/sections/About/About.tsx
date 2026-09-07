@@ -4,35 +4,24 @@ export function About() {
   return (
     <section id="about" className={styles.section}>
       <div className={styles.content}>
-        <p className={styles.name}>송승준</p>
-        <p className={styles.eyebrow}>BACKEND DEVELOPER</p>
-        <h1>
-          데이터의 흐름을 설계해
-          <br />
-          <em>안정적으로 동작하는 서비스</em>를 만듭니다.
-        </h1>
-        <p className={styles.description}>
-          도메인 API를 중심으로 데이터가 저장·조회·전달되는 과정을 설계합니다.
-          문제가 생기면 캐시·메시지·배포 상태를 나누어 살피며, 원인을 끝까지
-          추적합니다.
+        <h1 className={styles.sectionTitle}>ABOUT ME</h1>
+        <p className={styles.introduction}>
+          안정적인 데이터 흐름과 효율적인 API 설계를 고민하는 백엔드 개발자
+          <strong> 송승준</strong>입니다.
         </p>
-        <div className={styles.focus}>
-          <p className={styles.focusTitle}>FOCUS</p>
-          <ul>
-            <li>
-              <strong>DOMAIN API</strong>
-              <span>도메인에 맞는 API 구조를 설계합니다.</span>
-            </li>
-            <li>
-              <strong>DATA FLOW</strong>
-              <span>저장부터 전달까지 데이터 흐름을 관리합니다.</span>
-            </li>
-            <li>
-              <strong>TROUBLESHOOTING</strong>
-              <span>상태를 분리해 문제 원인을 추적합니다.</span>
-            </li>
-          </ul>
-        </div>
+        <dl className={styles.profileDetails}>
+          <div>
+            <dt>학력</dt>
+            <dd>00대학교</dd>
+            <dd className={styles.subDetail}>컴퓨터공학과</dd>
+          </div>
+          <div>
+            <dt>자격사항</dt>
+            <dd>정보처리기사</dd>
+            <dd>SQLD</dd>
+          </div>
+        </dl>
+        <p className={styles.stack}>Java · Spring Boot · JPA · Redis · PostgreSQL</p>
       </div>
       <aside className={styles.profile} aria-label="프로필 이미지 영역">
         <span>PROFILE IMAGE</span>
