@@ -16,6 +16,8 @@ export function FloatingContact() {
         target="_blank"
         rel="noreferrer"
         aria-current={activeLink === "github" ? "true" : undefined}
+        onMouseEnter={() => setActiveLink("github")}
+        onFocus={() => setActiveLink("github")}
         onClick={() => setActiveLink("github")}
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -27,6 +29,8 @@ export function FloatingContact() {
         className={styles.email}
         href="mailto:john091122@naver.com"
         aria-current={activeLink === "email" ? "true" : undefined}
+        onMouseEnter={() => setActiveLink("email")}
+        onFocus={() => setActiveLink("email")}
         onClick={() => setActiveLink("email")}
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
