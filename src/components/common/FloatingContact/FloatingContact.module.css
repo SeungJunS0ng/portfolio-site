@@ -1,0 +1,8 @@
+.floating { position: fixed; right: 1.5rem; bottom: 2rem; z-index: 5; display: flex; gap: 0.25rem; padding: 0.3rem; background: color-mix(in srgb, var(--blue-300) 65%, transparent); border: 1px solid #ffffff99; border-radius: var(--radius-pill); box-shadow: 0 0.75rem 2rem #2645852e; backdrop-filter: blur(14px) saturate(140%); }
+.floating a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 1rem; border-radius: var(--radius-pill); color: var(--blue-900); font: var(--font-body2); font-weight: 700; text-decoration: none; transition: transform 0.2s, background 0.2s; }
+.floating a:hover { transform: translateY(-0.125rem); }
+.github { background: color-mix(in srgb, var(--gray-0) 78%, transparent); }
+.email { color: var(--gray-0) !important; }
+.floating svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
+.email svg { stroke: currentColor; stroke-width: 1.8; }
+@media (max-width: 720px) { .floating { right: 1rem; bottom: 1rem; } .floating a { min-height: 2.5rem; padding: 0 0.75rem; } }
