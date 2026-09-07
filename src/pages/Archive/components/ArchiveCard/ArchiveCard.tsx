@@ -1,3 +1,4 @@
+import styles from "./ArchiveCard.module.css";
 type ArchiveCardProps = {
   post: {
     id: string;
@@ -20,16 +21,20 @@ export function ArchiveCard({ post }: ArchiveCardProps) {
   });
 
   return (
-    <article>
-      <div>
-        <h2>{post.title}</h2>
-        <span>{isResolved ? "해결완료" : "미해결"}</span>
+    <article className={styles.card}>
+      <div className={styles.header}>
+        <h2 className={styles.title}>{post.title}</h2>
+        <span
+          className={`${styles.status} ${isResolved ? styles.resolved : ""}`}
+        >
+          {isResolved ? "해결완료" : "미해결"}
+        </span>
       </div>
 
-      <p>{post.content}</p>
+      <p className={styles.preview}>{post.content}</p>
 
-      <div>
-        <ul>
+      <div className={styles.footer}>
+        <ul className={styles.tags}>
           {post.tags.map((tag) => (
             <li key={tag}>#{tag}</li>
           ))}
