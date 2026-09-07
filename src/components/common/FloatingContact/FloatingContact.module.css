@@ -1,8 +1,11 @@
-.floating { position: fixed; right: 1.5rem; bottom: 2rem; z-index: 5; display: flex; gap: 0.25rem; padding: 0.3rem; background: color-mix(in srgb, var(--blue-300) 65%, transparent); border: 1px solid #ffffff99; border-radius: var(--radius-pill); box-shadow: 0 0.75rem 2rem #2645852e; backdrop-filter: blur(14px) saturate(140%); }
-.floating a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 1rem; border-radius: var(--radius-pill); color: var(--blue-900); font: var(--font-body2); font-weight: 700; text-decoration: none; transition: transform 0.2s, background 0.2s; }
-.floating a:hover { transform: translateY(-0.125rem); }
-.github { background: color-mix(in srgb, var(--gray-0) 78%, transparent); }
+.floating { position: fixed; bottom: 1.5rem; left: 50%; z-index: 5; display: grid; grid-template-columns: 1fr 1fr; width: min(17rem, calc(100% - 2rem)); padding: 0.3rem; overflow: hidden; transform: translateX(-50%); background: color-mix(in srgb, var(--blue-300) 68%, transparent); border: 1px solid #ffffff99; border-radius: var(--radius-pill); box-shadow: 0 0.75rem 2rem #2645852e; backdrop-filter: blur(18px) saturate(150%); }
+.indicator { position: absolute; inset: 0.3rem auto 0.3rem 0.3rem; width: calc(50% - 0.45rem); border: 1px solid #ffffffb3; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--gray-0) 82%, transparent); box-shadow: inset 0 1px #ffffffcc, 0 0.2rem 0.7rem #2645851f; transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1); }
+.emailActive .indicator { transform: translateX(calc(100% + 0.3rem)); }
+.floating a { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; color: var(--blue-900); border-radius: var(--radius-pill); font: var(--font-body2); font-weight: 700; text-decoration: none; transition: color 0.25s, transform 0.25s; }
+.floating a:hover { transform: translateY(-0.08rem); }
 .email { color: var(--gray-0) !important; }
+.emailActive .github { color: var(--gray-0); }
+.emailActive .email { color: var(--blue-900) !important; }
 .floating svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
 .email svg { stroke: currentColor; stroke-width: 1.8; }
-@media (max-width: 720px) { .floating { right: 1rem; bottom: 1rem; } .floating a { min-height: 2.5rem; padding: 0 0.75rem; } }
+@media (max-width: 720px) { .floating { bottom: 1rem; } .floating a { min-height: 2.5rem; font-size: 0.875rem; } }
