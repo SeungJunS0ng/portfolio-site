@@ -20,8 +20,10 @@ export function ArchiveDetail() {
   const action = useArchiveAction();
   const [adminAction, setAdminAction] = useState<AdminAction | null>(null);
 
-  function handleAdminAction(password: string) {
+  function handleAdminAction() {
     if (!post || !adminAction) return;
+    const password = window.prompt("관리자 비밀번호를 입력하세요.");
+    if (!password) return;
     if (adminAction === "delete") {
       action.mutate({ action: "deletePost", id: post.id, password }, { onSuccess: () => navigate("/archive") });
       return;
@@ -70,8 +72,8 @@ export function ArchiveDetail() {
         )}
       </section>
       {post && adminAction && <AdminPasswordModal
-        title={adminAction === "delete" ? "글을 삭제할까요?" : "상태를 변경할까요?"}
-        description={adminAction === "delete" ? "삭제한 글과 답변은 되돌릴 수 없습니다." : "관리자 비밀번호를 확인한 뒤 상태를 변경합니다."}
+        title={adminAction === "delete" ? "글을 삭제할까요?" : post.status === "resolved" ? "미해결 처리하시겠습니까?" : "해결완료 처리하시겠습니까?"}
+        description={adminAction === "delete" ? "삭제한 글과 답변은 되돌릴 수 없습니다." : post.status === "resolved" ? "언제든 다시 해결완료로 변경할 수 있습니다." : "언제든 다시 미해결로 변경할 수 있습니다."}
         confirmLabel={adminAction === "delete" ? "삭제" : "저장"}
         isPending={action.isPending}
         onClose={() => setAdminAction(null)}

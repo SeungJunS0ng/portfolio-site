@@ -99,11 +99,14 @@ export function Archive() {
       {statusTarget && (
         <AdminPasswordModal
           title={statusTarget.status === "resolved" ? "미해결로 변경할까요?" : "해결완료로 처리할까요?"}
-          description="관리자 비밀번호를 확인한 뒤 상태를 변경합니다."
+          description={statusTarget.status === "resolved" ? "언제든 다시 해결완료로 변경할 수 있습니다." : "언제든 다시 미해결로 변경할 수 있습니다."}
           confirmLabel="저장"
           isPending={updateStatus.isPending}
           onClose={() => setStatusTarget(null)}
-          onConfirm={(password) =>
+          onConfirm={() => {
+            const password = window.prompt("관리자 비밀번호를 입력하세요.");
+            if (!password) return;
+
             updateStatus.mutate(
               {
                 id: statusTarget.id,
@@ -111,8 +114,8 @@ export function Archive() {
                 password,
               },
               { onSuccess: () => setStatusTarget(null) },
-            )
-          }
+            );
+          }}
         />
       )}
     </main>

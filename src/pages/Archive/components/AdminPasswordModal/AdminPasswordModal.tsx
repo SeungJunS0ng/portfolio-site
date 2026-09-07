@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./AdminPasswordModal.module.css";
 
 type AdminPasswordModalProps = {
@@ -7,7 +6,7 @@ type AdminPasswordModalProps = {
   confirmLabel: string;
   isPending?: boolean;
   onClose: () => void;
-  onConfirm: (password: string) => void;
+  onConfirm: () => void;
 };
 
 export function AdminPasswordModal({
@@ -18,11 +17,9 @@ export function AdminPasswordModal({
   onClose,
   onConfirm,
 }: AdminPasswordModalProps) {
-  const [password, setPassword] = useState("");
-
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onConfirm(password);
+    onConfirm();
   }
 
   return (
@@ -30,16 +27,6 @@ export function AdminPasswordModal({
       <form className={styles.modal} onSubmit={handleSubmit}>
         <h2>{title}</h2>
         <p>{description}</p>
-        <label>
-          관리자 비밀번호
-          <input
-            autoFocus
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
-        </label>
         <div className={styles.actions}>
           <button type="button" onClick={onClose} disabled={isPending}>
             취소
