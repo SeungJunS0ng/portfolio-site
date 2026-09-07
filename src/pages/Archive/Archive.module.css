@@ -3,6 +3,8 @@
 .content h1 { margin-bottom: 1rem; font: var(--font-display); }
 .titleRow { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .writeLink { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1rem; color: white !important; background: var(--blue-700); border-radius: var(--radius-pill); text-decoration: none !important; }
+.backLink { display: inline-flex; align-items: center; min-height: 2.25rem; margin-bottom: 0.75rem; padding: 0 0.875rem; color: var(--gray-700) !important; background: var(--gray-0); border: 1px solid var(--gray-300); border-radius: var(--radius-pill); font: var(--font-small) !important; font-weight: 700; text-decoration: none !important; }
+.backLink:hover { color: var(--blue-700) !important; border-color: var(--blue-700); }
 .content > p:not(:global(.section-label)) { margin-bottom: 2rem; color: var(--gray-700); font: var(--font-body2); }
 .content a { color: var(--blue-700); font: var(--font-body2); font-weight: 700; text-decoration: underline; text-underline-offset: 0.25rem; }
 .list { display: grid; gap: 1rem; margin: 2rem 0; }

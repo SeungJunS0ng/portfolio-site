@@ -13,7 +13,7 @@ export function ArchiveEdit() {
   return (
     <main className={styles.page}>
       <section className={styles.content}>
-        <Link to={`/archive/${id}`}>상세로 돌아가기</Link>
+        <Link className={styles.backLink} to={`/archive/${id}`}>상세로</Link>
         <h1>글 수정</h1>
         {isPending && <p>불러오는 중입니다.</p>}
         {isError || !post ? <p role="alert">글을 불러오지 못했습니다.</p> : (

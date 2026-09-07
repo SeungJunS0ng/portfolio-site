@@ -10,7 +10,7 @@ export function ArchiveWrite() {
   return (
     <main className={styles.page}>
       <section className={styles.content}>
-        <Link to="/archive">목록으로 돌아가기</Link>
+        <Link className={styles.backLink} to="/archive">목록으로</Link>
         <h1>새 글 작성</h1>
         <ArchiveForm
           submitLabel="저장"
