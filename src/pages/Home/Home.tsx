@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { ContactButton } from "../../components/common/ContactButton/ContactButton";
 import { Footer } from "../../components/common/Footer/Footer";
-import { Header } from "../../components/common/Header/Header";
 import { TopButton } from "../../components/common/TopButton/TopButton";
-import { navigation } from "../../data/navigation";
-import { useActiveSection } from "../../hooks/useActiveSection";
-import { useScrollTo } from "../../hooks/useScrollTo";
 import { About } from "./sections/About/About";
 import { Contact } from "./sections/Contact/Contact";
 import { Experience } from "./sections/Experience/Experience";
@@ -14,26 +10,13 @@ import { Skills } from "./sections/Skills/Skills";
 import styles from "./Home.module.css";
 
 export function Home() {
-  const activeSection = useActiveSection(navigation.map((item) => item.id));
-  const scrollTo = useScrollTo();
-  const navigate = useNavigate();
-
-  const handleNavigate = (id: string) => {
-    if (id === "archive") {
-      navigate("/archive");
-      return;
-    }
-
-    scrollTo(id);
-  };
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+    if (sectionId) document.getElementById(sectionId)?.scrollIntoView();
+  }, []);
 
   return (
     <div className={styles.page}>
-      <Header
-        items={navigation}
-        activeId={activeSection}
-        onNavigate={handleNavigate}
-      />
       <main>
         <About />
         <Experience />

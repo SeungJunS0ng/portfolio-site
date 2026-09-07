@@ -11,7 +11,7 @@ type HeaderProps = {
 export function Header({ items, activeId, onNavigate }: HeaderProps) {
   return (
     <header className={styles.header}>
-      <a className={styles.logo} href="#about">
+      <a className={styles.logo} href="/">
         Portfolio<span>.</span>
       </a>
       <Navigation items={items} activeId={activeId} onNavigate={onNavigate} />
