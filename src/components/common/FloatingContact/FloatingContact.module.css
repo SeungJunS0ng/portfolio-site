@@ -7,5 +7,5 @@
 .emailActive .github { color: var(--gray-0); }
 .emailActive .email { color: var(--blue-900) !important; }
 .floating svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
-.email svg { stroke: currentColor; stroke-width: 1.8; }
+.email svg { fill: none; stroke: currentColor; stroke-width: 1.8; }
 @media (max-width: 720px) { .floating { bottom: 1rem; } .floating a { min-height: 2.5rem; font-size: 0.875rem; } }
