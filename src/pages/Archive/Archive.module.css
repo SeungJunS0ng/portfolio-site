@@ -4,3 +4,34 @@
 .content > p:not(:global(.section-label)) { margin-bottom: 2rem; color: var(--gray-700); font: var(--font-body2); }
 .content a { color: var(--blue-700); font: var(--font-body2); font-weight: 700; text-decoration: underline; text-underline-offset: 0.25rem; }
 .list { display: grid; gap: 1rem; margin: 2rem 0; }
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.filterButton {
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-pill);
+  color: var(--gray-700);
+  background: var(--gray-0);
+  font: var(--font-small);
+}
+
+.filterButton:hover {
+  border-color: var(--blue-700);
+}
+
+.filterButton.selected {
+  color: var(--blue-900);
+  background: var(--blue-100);
+  border-color: var(--blue-300);
+}
+
+.filterButton:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 3px;
+}
