@@ -19,3 +19,35 @@ export async function getArchivePosts(status: ArchiveStatus | null = null) {
 
   return data;
 }
+
+export async function getArchivePostById(id: string) {
+  const { data, error } = await supabase
+    .from("archive_posts")
+    .select("id, title, content, code_language, code, tags, status, created_at")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+}
+
+export async function updateArchivePostStatus(
+  id: string,
+  status: ArchiveStatus,
+) {
+  const { data, error } = await supabase
+    .from("archive_posts")
+    .update({ status })
+    .eq("id", id)
+    .select("id, title, content, tags, status, created_at")
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+}

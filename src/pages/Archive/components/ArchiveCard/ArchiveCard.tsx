@@ -9,10 +9,15 @@ type ArchiveCardProps = {
     status: ArchiveStatus;
     created_at: string;
   };
-  onStatusClick: (status: ArchiveStatus) => void;
+  isStatusUpdating: boolean;
+  onStatusToggle: (postId: string, status: ArchiveStatus) => void;
 };
 
-export function ArchiveCard({ post, onStatusClick }: ArchiveCardProps) {
+export function ArchiveCard({
+  post,
+  isStatusUpdating,
+  onStatusToggle,
+}: ArchiveCardProps) {
   const isResolved = post.status === "resolved";
 
   const createdAt = new Date(post.created_at).toLocaleDateString("ko-KR", {
@@ -37,21 +42,23 @@ export function ArchiveCard({ post, onStatusClick }: ArchiveCardProps) {
               <li key={tag}>#{tag}</li>
             ))}
           </ul>
-
-          <time dateTime={post.created_at}>작성일 {createdAt}</time>
         </div>
       </div>
       <button
         type="button"
         className={`${styles.statusButton} ${isResolved ? styles.resolved : ""}`}
-        aria-label={`${isResolved ? "해결완료" : "미해결"} 상태 필터 적용`}
-        onClick={() => onStatusClick(post.status)}
+        aria-label={`${isResolved ? "미해결" : "해결완료"} 상태로 변경`}
+        disabled={isStatusUpdating}
+        onClick={() => onStatusToggle(post.id, post.status)}
       >
         <span className={styles.statusIcon} aria-hidden="true">
           ✓
         </span>
         <span>{isResolved ? "해결완료" : "미해결"}</span>
       </button>
+      <time className={styles.createdAt} dateTime={post.created_at}>
+        작성일 {createdAt}
+      </time>
     </article>
   );
 }

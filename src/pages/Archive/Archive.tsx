@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useArchivePosts } from "../../hooks/useArchivePosts";
+import { useUpdateArchivePostStatus } from "../../hooks/useUpdateArchivePostStatus";
 import styles from "./Archive.module.css";
 import { ArchiveCard } from "./components/ArchiveCard/ArchiveCard";
 import { useState } from "react";
@@ -8,11 +9,19 @@ import type { ArchiveStatus } from "../../types";
 export function Archive() {
   const [status, setStatus] = useState<ArchiveStatus | null>(null);
   const { data: posts, isPending, isError } = useArchivePosts(status);
+  const updateStatus = useUpdateArchivePostStatus();
 
   function handleFilterClick(nextStatus: ArchiveStatus) {
     setStatus((currentStatus) =>
       currentStatus === nextStatus ? null : nextStatus,
     );
+  }
+
+  function handleStatusToggle(postId: string, currentStatus: ArchiveStatus) {
+    updateStatus.mutate({
+      id: postId,
+      status: currentStatus === "resolved" ? "unresolved" : "resolved",
+    });
   }
 
   return (
@@ -52,6 +61,10 @@ export function Archive() {
           </p>
         )}
 
+        {updateStatus.isError && (
+          <p role="alert">상태를 변경하지 못했습니다. 다시 시도해주세요.</p>
+        )}
+
         {!isPending && !isError && (
           <>
             {posts?.length === 0 ? (
@@ -66,7 +79,8 @@ export function Archive() {
                   <li key={post.id}>
                     <ArchiveCard
                       post={post}
-                      onStatusClick={handleFilterClick}
+                      isStatusUpdating={updateStatus.isPending}
+                      onStatusToggle={handleStatusToggle}
                     />
                   </li>
                 ))}
