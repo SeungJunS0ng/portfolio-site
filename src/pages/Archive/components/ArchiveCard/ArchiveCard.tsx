@@ -21,6 +21,8 @@ export function ArchiveCard({
   onStatusToggle,
 }: ArchiveCardProps) {
   const isResolved = post.status === "resolved";
+  const previewContent =
+    post.content.length > 120 ? post.content.slice(0, 120) : post.content;
 
   const createdAt = new Date(post.created_at).toLocaleDateString("ko-KR", {
     year: "numeric",
@@ -39,12 +41,12 @@ export function ArchiveCard({
           <p className={styles.commentCount}>답변 {post.comment_count ?? 0}</p>
         </div>
 
-        <div className={styles.previewRow}>
-          <p className={styles.preview}>{post.content}</p>
+        <p className={styles.preview}>
+          {previewContent}{" "}
           <Link className={styles.moreLink} to={`/archive/${post.id}`}>
-            더보기
+            ... 더보기
           </Link>
-        </div>
+        </p>
 
         <div className={styles.footer}>
           <ul className={styles.tags}>
