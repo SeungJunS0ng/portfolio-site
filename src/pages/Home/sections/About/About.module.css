@@ -15,3 +15,4 @@ h1 em { color: var(--blue-700); font-style: normal; }
 .profile span { color: var(--gray-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .profile p { margin-top: 0.5rem; font: var(--font-small); }
 @media (max-width: 720px) { .section { min-height: auto; grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; } h1 { font-size: 2.5rem; } .profile { order: -1; width: min(100%, 20rem); min-height: 18rem; margin: 0 auto; } }
+@media (max-width: 480px) { .section { padding: 4rem 1.25rem; } h1 { font-size: 2.125rem; } .description { margin: 1.25rem 0 1.5rem; font-size: 1rem; } .certifications { padding: 1rem; } .profile { min-height: 15rem; } }

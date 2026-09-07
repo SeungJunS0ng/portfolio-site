@@ -12,3 +12,4 @@
 .links { display: flex; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-500); font: var(--font-small); font-weight: 700; }
 .card a { text-decoration: underline; text-underline-offset: 0.25rem; }
 @media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .grid { gap: 1rem; margin-top: 2rem; } .card { min-height: 0; padding: 1.25rem; } .stack { margin: 1.25rem 0; } }
