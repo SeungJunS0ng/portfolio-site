@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { ContactButton } from "../../components/common/ContactButton/ContactButton";
 import { Footer } from "../../components/common/Footer/Footer";
 import { TopButton } from "../../components/common/TopButton/TopButton";
 import { About } from "./sections/About/About";
@@ -25,7 +24,6 @@ export function Home() {
         <Contact />
       </main>
       <Footer />
-      <ContactButton floating />
       <TopButton />
     </div>
   );

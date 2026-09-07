@@ -6,6 +6,7 @@ export function About() {
   return (
     <section id="about" className={styles.section}>
       <div className={styles.content}>
+        <p className={styles.name}>송승준</p>
         <p className={styles.eyebrow}>BACKEND DEVELOPER / SEUNGJUN SONG</p>
         <h1>
           데이터 흐름을 설계하고
