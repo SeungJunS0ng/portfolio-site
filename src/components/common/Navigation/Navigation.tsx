@@ -5,9 +5,15 @@ type NavigationProps = {
   items: NavigationItem[];
   activeId: string;
   onNavigate: (id: string) => void;
+  onNavigateIntent?: (id: string) => void;
 };
 
-export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
+export function Navigation({
+  items,
+  activeId,
+  onNavigate,
+  onNavigateIntent,
+}: NavigationProps) {
   return (
     <nav aria-label="주요 메뉴">
       <ul className={styles.list}>
@@ -15,6 +21,8 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
           <li key={item.id}>
             <button
               className={activeId === item.id ? styles.active : ""}
+              onMouseEnter={() => onNavigateIntent?.(item.id)}
+              onFocus={() => onNavigateIntent?.(item.id)}
               onClick={() => onNavigate(item.id)}
             >
               {item.label}

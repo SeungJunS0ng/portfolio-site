@@ -103,6 +103,14 @@ ol {
   margin: 0 auto;
 }
 
+.route-loading {
+  display: grid;
+  min-height: calc(100vh - 4rem);
+  place-items: center;
+  color: var(--gray-700);
+  font: var(--font-body2);
+}
+
 @media (max-width: 720px) {
   #root {
     width: 100%;

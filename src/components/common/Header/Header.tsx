@@ -6,15 +6,26 @@ type HeaderProps = {
   items: NavigationItem[];
   activeId: string;
   onNavigate: (id: string) => void;
+  onNavigateIntent?: (id: string) => void;
 };
 
-export function Header({ items, activeId, onNavigate }: HeaderProps) {
+export function Header({
+  items,
+  activeId,
+  onNavigate,
+  onNavigateIntent,
+}: HeaderProps) {
   return (
     <header className={styles.header}>
       <a className={styles.logo} href="/">
         Portfolio<span>.</span>
       </a>
-      <Navigation items={items} activeId={activeId} onNavigate={onNavigate} />
+      <Navigation
+        items={items}
+        activeId={activeId}
+        onNavigate={onNavigate}
+        onNavigateIntent={onNavigateIntent}
+      />
     </header>
   );
 }
