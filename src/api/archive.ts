@@ -1,7 +1,14 @@
 import { supabase } from "../lib/supabaseClient";
-import type { ArchiveStatus } from "../types";
+import type {
+  ArchiveComment,
+  ArchivePost,
+  ArchivePostInput,
+  ArchiveStatus,
+} from "../types";
 
-export async function getArchivePosts(status: ArchiveStatus | null = null) {
+export async function getArchivePosts(
+  status: ArchiveStatus | null = null,
+): Promise<ArchivePost[]> {
   let query = supabase
     .from("archive_posts")
     .select("id, title, content, tags, status, created_at")
@@ -17,10 +24,12 @@ export async function getArchivePosts(status: ArchiveStatus | null = null) {
     throw error;
   }
 
-  return data;
+  return (data ?? []) as ArchivePost[];
 }
 
-export async function getArchivePostById(id: string) {
+export async function getArchivePostById(
+  id: string,
+): Promise<ArchivePost | null> {
   const { data, error } = await supabase
     .from("archive_posts")
     .select("id, title, content, code_language, code, tags, status, created_at")
@@ -31,23 +40,57 @@ export async function getArchivePostById(id: string) {
     throw error;
   }
 
-  return data;
+  return data as ArchivePost | null;
 }
 
-export async function updateArchivePostStatus(
-  id: string,
-  status: ArchiveStatus,
-) {
+export async function getArchiveComments(postId: string): Promise<ArchiveComment[]> {
   const { data, error } = await supabase
-    .from("archive_posts")
-    .update({ status })
-    .eq("id", id)
-    .select("id, title, content, tags, status, created_at")
-    .single();
+    .from("archive_comments")
+    .select("id, post_id, author_name, content, created_at, updated_at")
+    .eq("post_id", postId)
+    .order("created_at", { ascending: true });
 
   if (error) {
     throw error;
   }
 
-  return data;
+  return (data ?? []) as ArchiveComment[];
+}
+
+type ArchiveAction =
+  | "createPost"
+  | "updatePost"
+  | "deletePost"
+  | "updateStatus"
+  | "createComment"
+  | "updateComment"
+  | "deleteComment";
+
+type ArchiveActionPayload = {
+  id?: string;
+  postId?: string;
+  input?: ArchivePostInput;
+  status?: ArchiveStatus;
+  authorName?: string;
+  content?: string;
+  password: string;
+};
+
+export async function runArchiveAction<T>(
+  action: ArchiveAction,
+  payload: ArchiveActionPayload,
+): Promise<T> {
+  const { data, error } = await supabase.functions.invoke("archive-actions", {
+    body: { action, ...payload },
+  });
+
+  if (error) {
+    throw error;
+  }
+
+  if (data?.error) {
+    throw new Error(data.error);
+  }
+
+  return data as T;
 }

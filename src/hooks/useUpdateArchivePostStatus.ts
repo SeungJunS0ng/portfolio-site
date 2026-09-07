@@ -1,13 +1,20 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateArchivePostStatus } from "../api/archive";
+import { runArchiveAction } from "../api/archive";
 import type { ArchiveStatus } from "../types";
 
 export function useUpdateArchivePostStatus() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, status }: { id: string; status: ArchiveStatus }) =>
-      updateArchivePostStatus(id, status),
+    mutationFn: ({
+      id,
+      status,
+      password,
+    }: {
+      id: string;
+      status: ArchiveStatus;
+      password: string;
+    }) => runArchiveAction("updateStatus", { id, status, password }),
     onMutate: async ({ id, status }) => {
       await queryClient.cancelQueries({ queryKey: ["archivePosts"] });
       const previousQueries = queryClient.getQueriesData({
