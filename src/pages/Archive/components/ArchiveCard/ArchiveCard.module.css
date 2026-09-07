@@ -13,10 +13,7 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
+  display: block;
 }
 
 .body {
@@ -95,19 +92,18 @@
   background: var(--blue-100);
 }
 
-.previewRow { display: flex; align-items: flex-end; gap: 0.5rem; margin-top: 1.5rem; }
+.previewRow { position: relative; margin-top: 1.5rem; }
 .preview {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   overflow-wrap: anywhere;
-  flex: 1;
-  min-width: 0;
+  padding-right: 4.5rem;
   color: var(--gray-900);
   font: var(--font-body2);
 }
-.moreLink { flex-shrink: 0; color: var(--blue-700); font: var(--font-small); font-weight: 700; text-decoration: none; }
+.moreLink { position: absolute; right: 0; bottom: 0; padding-left: 0.25rem; color: var(--blue-700); background: var(--gray-0); font: var(--font-small); font-weight: 700; text-decoration: none; }
 .moreLink::before { content: "... "; }
 .moreLink:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
 
