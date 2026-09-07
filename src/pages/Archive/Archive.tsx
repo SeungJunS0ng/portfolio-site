@@ -5,11 +5,16 @@ import styles from "./Archive.module.css";
 import { ArchiveCard } from "./components/ArchiveCard/ArchiveCard";
 import { useState } from "react";
 import type { ArchiveStatus } from "../../types";
+import { AdminPasswordModal } from "./components/AdminPasswordModal/AdminPasswordModal";
 
 export function Archive() {
   const [status, setStatus] = useState<ArchiveStatus | null>(null);
   const { data: posts, isPending, isError } = useArchivePosts(status);
   const updateStatus = useUpdateArchivePostStatus();
+  const [statusTarget, setStatusTarget] = useState<{
+    id: string;
+    status: ArchiveStatus;
+  } | null>(null);
 
   function handleFilterClick(nextStatus: ArchiveStatus) {
     setStatus((currentStatus) =>
@@ -18,17 +23,17 @@ export function Archive() {
   }
 
   function handleStatusToggle(postId: string, currentStatus: ArchiveStatus) {
-    updateStatus.mutate({
-      id: postId,
-      status: currentStatus === "resolved" ? "unresolved" : "resolved",
-    });
+    setStatusTarget({ id: postId, status: currentStatus });
   }
 
   return (
     <main className={styles.page}>
       <section className={styles.content}>
         <p className="section-label">06 / ARCHIVE</p>
-        <h1>Archive</h1>
+        <div className={styles.titleRow}>
+          <h1>Archive</h1>
+          <Link className={styles.writeLink} to="/archive/new">새 글 작성</Link>
+        </div>
 
         <div
           className={styles.filters}
@@ -91,6 +96,25 @@ export function Archive() {
 
         <Link to="/">홈으로 돌아가기</Link>
       </section>
+      {statusTarget && (
+        <AdminPasswordModal
+          title={statusTarget.status === "resolved" ? "미해결로 변경할까요?" : "해결완료로 처리할까요?"}
+          description="관리자 비밀번호를 확인한 뒤 상태를 변경합니다."
+          confirmLabel="저장"
+          isPending={updateStatus.isPending}
+          onClose={() => setStatusTarget(null)}
+          onConfirm={(password) =>
+            updateStatus.mutate(
+              {
+                id: statusTarget.id,
+                status: statusTarget.status === "resolved" ? "unresolved" : "resolved",
+                password,
+              },
+              { onSuccess: () => setStatusTarget(null) },
+            )
+          }
+        />
+      )}
     </main>
   );
 }

@@ -10,6 +10,9 @@ import { Header } from "./components/common/Header/Header";
 import { navigation } from "./data/navigation";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { Archive } from "./pages/Archive/Archive";
+import { ArchiveDetail } from "./pages/Archive/ArchiveDetail";
+import { ArchiveEdit } from "./pages/Archive/ArchiveEdit";
+import { ArchiveWrite } from "./pages/Archive/ArchiveWrite";
 import { Home } from "./pages/Home/Home";
 
 function AppLayout() {
@@ -42,12 +45,15 @@ function AppLayout() {
     <>
       <Header
         items={navigation}
-        activeId={location.pathname === "/archive" ? "archive" : activeSection}
+        activeId={location.pathname.startsWith("/archive") ? "archive" : activeSection}
         onNavigate={handleNavigate}
       />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/archive" element={<Archive />} />
+        <Route path="/archive/new" element={<ArchiveWrite />} />
+        <Route path="/archive/:id" element={<ArchiveDetail />} />
+        <Route path="/archive/:id/edit" element={<ArchiveEdit />} />
       </Routes>
     </>
   );

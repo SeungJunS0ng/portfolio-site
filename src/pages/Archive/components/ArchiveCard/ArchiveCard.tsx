@@ -1,5 +1,6 @@
 import styles from "./ArchiveCard.module.css";
 import type { ArchiveStatus } from "../../../../types";
+import { Link } from "react-router-dom";
 type ArchiveCardProps = {
   post: {
     id: string;
@@ -31,7 +32,9 @@ export function ArchiveCard({
     <article className={styles.card}>
       <div className={styles.body}>
         <div className={styles.header}>
-          <h2 className={styles.title}>{post.title}</h2>
+          <h2 className={styles.title}>
+            <Link to={`/archive/${post.id}`}>{post.title}</Link>
+          </h2>
         </div>
 
         <p className={styles.preview}>{post.content}</p>
