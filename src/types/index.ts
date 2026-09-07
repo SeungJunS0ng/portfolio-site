@@ -38,3 +38,5 @@ export type NavigationItem = {
   id: string;
   label: string;
 };
+
+export type ArchiveStatus = "resolved" | "unresolved";
