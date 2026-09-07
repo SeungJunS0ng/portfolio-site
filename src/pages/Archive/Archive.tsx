@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useArchivePosts } from "../../hooks/useArchivePosts";
 import styles from "./Archive.module.css";
+import { ArchiveCard } from "./components/ArchiveCard/ArchiveCard";
 
 export function Archive() {
   const { data: posts, isPending, isError } = useArchivePosts();
@@ -24,11 +25,10 @@ export function Archive() {
             {posts?.length === 0 ? (
               <p>등록된 글이 없습니다.</p>
             ) : (
-              <ul>
+              <ul className={styles.list}>
                 {posts?.map((post) => (
                   <li key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>{post.content}</p>
+                    <ArchiveCard post={post} />
                   </li>
                 ))}
               </ul>
