@@ -51,6 +51,7 @@ export type ArchivePost = {
   status: ArchiveStatus;
   created_at: string;
   updated_at?: string;
+  comment_count?: number;
 };
 
 export type ArchiveComment = {

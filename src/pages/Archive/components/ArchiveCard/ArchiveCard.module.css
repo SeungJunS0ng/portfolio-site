@@ -30,6 +30,7 @@
 }
 .title a { text-decoration: none; }
 .title a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.25rem; }
+.commentCount { margin-top: 0.25rem; color: var(--gray-500); font: var(--font-small); }
 
 .status {
   display: none;
@@ -94,16 +95,21 @@
   background: var(--blue-100);
 }
 
+.previewRow { display: flex; align-items: flex-end; gap: 0.5rem; margin-top: 1.5rem; }
 .preview {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   overflow-wrap: anywhere;
-  margin-top: 1.5rem;
+  flex: 1;
+  min-width: 0;
   color: var(--gray-900);
   font: var(--font-body2);
 }
+.moreLink { flex-shrink: 0; color: var(--blue-700); font: var(--font-small); font-weight: 700; text-decoration: none; }
+.moreLink::before { content: "... "; }
+.moreLink:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
 
 .footer {
   display: flex;

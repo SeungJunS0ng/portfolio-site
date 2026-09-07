@@ -9,6 +9,7 @@ type ArchiveCardProps = {
     tags: string[];
     status: ArchiveStatus;
     created_at: string;
+    comment_count?: number;
   };
   isStatusUpdating: boolean;
   onStatusToggle: (postId: string, status: ArchiveStatus) => void;
@@ -35,9 +36,15 @@ export function ArchiveCard({
           <h2 className={styles.title}>
             <Link to={`/archive/${post.id}`}>{post.title}</Link>
           </h2>
+          <p className={styles.commentCount}>답변 {post.comment_count ?? 0}</p>
         </div>
 
-        <p className={styles.preview}>{post.content}</p>
+        <div className={styles.previewRow}>
+          <p className={styles.preview}>{post.content}</p>
+          <Link className={styles.moreLink} to={`/archive/${post.id}`}>
+            더보기
+          </Link>
+        </div>
 
         <div className={styles.footer}>
           <ul className={styles.tags}>

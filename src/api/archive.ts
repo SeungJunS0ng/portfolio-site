@@ -11,7 +11,7 @@ export async function getArchivePosts(
 ): Promise<ArchivePost[]> {
   let query = supabase
     .from("archive_posts")
-    .select("id, title, content, tags, status, created_at")
+    .select("id, title, content, tags, status, created_at, archive_comments(count)")
     .order("created_at", { ascending: false });
 
   if (status !== null) {
@@ -24,7 +24,10 @@ export async function getArchivePosts(
     throw error;
   }
 
-  return (data ?? []) as ArchivePost[];
+  return (data ?? []).map(({ archive_comments, ...post }) => ({
+    ...post,
+    comment_count: archive_comments?.[0]?.count ?? 0,
+  })) as ArchivePost[];
 }
 
 export async function getArchivePostById(
