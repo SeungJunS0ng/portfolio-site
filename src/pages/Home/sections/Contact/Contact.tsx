@@ -11,6 +11,11 @@ export function Contact() {
         프로젝트와 개발에 관한 제안을 기다리고 있어요. 편한 방법으로
         연락해주세요.
       </p>
+      <Link to="/archive" className={styles.archiveLink}>
+        <strong>Archive</strong>
+        <span>개발 기록 보러가기</span>
+        <span aria-hidden="true">↗</span>
+      </Link>
 
       <div className={styles.cards}>
         <a
@@ -68,11 +73,6 @@ export function Contact() {
       </div>
 
       <p className={styles.message}>언제든 편하게 연락주세요 :)</p>
-      <Link to="/archive" className={styles.archiveLink}>
-        <strong>Archive</strong>
-        <span>개발 기록 보러가기</span>
-        <span aria-hidden="true">↗</span>
-      </Link>
     </section>
   );
 }

@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .card {
@@ -78,7 +78,7 @@
   align-items: center;
   gap: 0.35rem;
   width: fit-content;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   color: var(--blue-700);
   font: var(--font-small);
   font-weight: 700;
