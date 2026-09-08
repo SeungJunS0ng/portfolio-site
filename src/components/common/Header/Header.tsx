@@ -18,6 +18,7 @@ export function Header({
   return (
     <header className={styles.header}>
       <a className={styles.logo} href="/">
+        <img src="/favicon.svg" alt="" className={styles.logoIcon} />
         Portfolio<span>.</span>
       </a>
       <Navigation
