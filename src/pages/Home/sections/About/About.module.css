@@ -10,9 +10,9 @@
 .profileDetails div { display: grid; gap: 0.45rem; min-width: 0; }
 .profileDetails dt { color: var(--gray-900); font: var(--font-body2); font-weight: 700; }
 .profileDetails dd { color: var(--gray-700); font: var(--font-small); }
-.contactPanel { grid-column: 2; align-self: start; display: grid; width: min(100%, 24rem); margin-top: 1.75rem; }
+.contactPanel { grid-column: 2; align-self: start; display: grid; width: min(100%, 24rem); margin-top: 1.75rem; padding: 1.25rem; background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: var(--radius-md); }
 .contactPanel div { display: grid; gap: 0.5rem; }
-.contactPanel dt { color: var(--gray-900); font: var(--font-body2); font-weight: 700; }
+.contactPanel dt { color: var(--blue-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .contactPanel dd { display: grid; gap: 0.4rem; }
 .contactPanel a { display: inline-flex; align-items: center; gap: 0.4rem; width: fit-content; color: var(--gray-700); font: var(--font-small); font-weight: 700; overflow-wrap: anywhere; text-decoration: none; }
 .contactPanel a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.2rem; }
