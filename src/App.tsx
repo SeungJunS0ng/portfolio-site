@@ -48,7 +48,7 @@ function AppLayout() {
 
   useLayoutEffect(() => {
     if (location.pathname.startsWith("/archive")) {
-      const initialScrollTop = location.pathname === "/archive" ? 144 : 0;
+      const initialScrollTop = location.pathname === "/archive" ? 128 : 0;
       window.scrollTo(0, initialScrollTop);
     }
   }, [location.pathname]);
