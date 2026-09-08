@@ -25,7 +25,10 @@ export function About() {
             <dt>자격사항</dt>
             <dd>정보처리기사 · SQLD</dd>
           </div>
-          <div className={styles.contactDetails}>
+        </dl>
+      </div>
+      <dl className={styles.contactPanel}>
+          <div>
             <dt>Phone &amp; Email &amp; GitHub</dt>
             <dd>
               <a href="tel:01062410923">
@@ -49,8 +52,7 @@ export function About() {
               </a>
             </dd>
           </div>
-        </dl>
-      </div>
+      </dl>
       <aside className={styles.profile} aria-label="프로필 이미지 영역">
         <span>PROFILE IMAGE</span>
         <p>사진 추가 예정</p>
