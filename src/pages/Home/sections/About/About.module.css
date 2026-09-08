@@ -16,10 +16,9 @@
 .contactDetails a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.2rem; }
 .contactDetails svg { flex: 0 0 auto; width: 1rem; height: 1rem; fill: currentColor; }
 .contactDetails a:nth-child(-n + 2) svg { fill: none; }
-.bootcamp { grid-column: 2; align-self: start; justify-self: start; display: grid; gap: 0.65rem; width: min(100%, 20rem); margin-top: 1.75rem; padding-top: 1rem; color: var(--gray-700); border-top: 2px solid var(--blue-100); }
+.bootcamp { grid-column: 2; align-self: start; justify-self: start; display: grid; gap: 0.65rem; width: min(100%, 20rem); margin-top: 1.75rem; margin-left: -1rem; padding-top: 1rem; color: var(--gray-700); border-top: 2px solid var(--blue-100); }
 .bootcampTop { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
 .bootcampTop img { width: 7rem; height: auto; object-fit: contain; }
-.bootcampTop span { flex: 0 0 auto; padding: 0.25rem 0.5rem; color: var(--blue-700); background: var(--blue-100); border-radius: var(--radius-pill); font: var(--font-small); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.06em; }
 .bootcampLabel { color: var(--blue-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .bootcamp h3 { color: var(--gray-900); font: var(--font-body2); font-weight: 700; letter-spacing: -0.03em; }
 .bootcamp time { color: var(--gray-700); font: var(--font-small); }

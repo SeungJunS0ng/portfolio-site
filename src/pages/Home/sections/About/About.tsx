@@ -53,7 +53,6 @@ export function About() {
         <aside className={styles.bootcamp} aria-label="현대오토에버 부트캠프 참여 정보">
           <div className={styles.bootcampTop}>
             <img src="/images/hyundai-autoever.png" alt="Hyundai AutoEver" />
-            <span>IN PROGRESS</span>
           </div>
           <p className={styles.bootcampLabel}>HYUNDAI AUTOEVER</p>
           <h3>부트캠프 참여 중</h3>
