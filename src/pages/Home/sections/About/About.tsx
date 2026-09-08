@@ -1,4 +1,5 @@
 import styles from "./About.module.css";
+import { Link } from "react-router-dom";
 
 export function About() {
   return (
@@ -47,6 +48,14 @@ export function About() {
                 </svg>
                 github.com/SeungJunS0ng
               </a>
+            </dd>
+          </div>
+          <div className={styles.archiveDetails}>
+            <dt>Archive</dt>
+            <dd>
+              <Link to="/archive" className={styles.archiveLink}>
+                개발 기록 보러가기 <span aria-hidden="true">↗</span>
+              </Link>
             </dd>
           </div>
         </dl>

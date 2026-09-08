@@ -16,6 +16,9 @@
 .contactDetails a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.2rem; }
 .contactDetails svg { flex: 0 0 auto; width: 1rem; height: 1rem; fill: currentColor; }
 .contactDetails a:nth-child(-n + 2) svg { fill: none; }
+.archiveDetails { margin-top: 0.25rem; }
+.archiveLink { display: inline-flex; align-items: center; gap: 0.35rem; width: fit-content; color: var(--blue-700); font: var(--font-small); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 0.15rem; transition: gap 160ms ease, color 160ms ease; }
+.archiveLink:hover { gap: 0.55rem; color: var(--blue-900); }
 .bootcamp { grid-column: 2; align-self: start; justify-self: start; display: grid; gap: 0.65rem; width: min(100%, 20rem); margin-top: 1.75rem; margin-left: -1rem; color: var(--gray-700); }
 .bootcampTop { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
 .bootcampTop img { width: 7rem; height: auto; object-fit: contain; }
