@@ -60,7 +60,7 @@ export async function getArchivePostById(
 export async function getArchiveComments(postId: string): Promise<ArchiveComment[]> {
   const { data, error } = await supabase
     .from("archive_comments")
-    .select("id, post_id, author_name, content, created_at, updated_at")
+    .select("id, post_id, author_name, content, code_language, code, created_at, updated_at")
     .eq("post_id", postId)
     .order("created_at", { ascending: true });
 
@@ -87,6 +87,8 @@ type ArchiveActionPayload = {
   status?: ArchiveStatus;
   authorName?: string;
   content?: string;
+  codeLanguage?: string;
+  code?: string;
   password: string;
 };
 

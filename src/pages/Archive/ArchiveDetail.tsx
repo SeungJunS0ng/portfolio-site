@@ -64,9 +64,9 @@ export function ArchiveDetail() {
               <CommentForm
                 isPending={action.isPending}
                 errorMessage={action.isError ? "답변을 저장하지 못했습니다." : undefined}
-                onSubmit={(authorName, content, password) => action.mutate({ action: "createComment", postId: post.id, authorName, content, password })}
+                onSubmit={(authorName, content, codeLanguage, code, password) => action.mutate({ action: "createComment", postId: post.id, authorName, content, codeLanguage, code, password })}
               />
-              {isCommentsPending ? <p>답변을 불러오는 중입니다.</p> : <ul className={styles.commentList}>{comments.map((comment) => <li key={comment.id}><strong>{comment.author_name}</strong><p>{comment.content}</p><time dateTime={comment.created_at}>{new Date(comment.created_at).toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" })}</time></li>)}</ul>}
+              {isCommentsPending ? <p>답변을 불러오는 중입니다.</p> : <ul className={styles.commentList}>{comments.map((comment) => <li key={comment.id}><strong>{comment.author_name}</strong><p>{comment.content}</p>{comment.code && <section className={styles.commentCode}><span>{comment.code_language}</span><pre><code>{comment.code}</code></pre></section>}<time dateTime={comment.created_at}>{new Date(comment.created_at).toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" })}</time></li>)}</ul>}
             </section>
           </>
         )}

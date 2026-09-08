@@ -36,7 +36,7 @@ Deno.serve(async (request) => {
   const body = await request.json().catch(() => null);
   if (!body || typeof body !== "object") return json({ error: "요청 형식이 올바르지 않습니다." }, 400);
 
-  const { action, id, postId, input, status, authorName, content, password } = body as Record<string, unknown>;
+  const { action, id, postId, input, status, authorName, content, codeLanguage, code, password } = body as Record<string, unknown>;
   if (!hasText(password, 200)) return json({ error: "비밀번호를 입력해주세요." }, 400);
 
   const adminActions = ["createPost", "updatePost", "deletePost", "updateStatus"];
@@ -82,8 +82,15 @@ Deno.serve(async (request) => {
 
   if (action === "createComment") {
     if (!postId || !hasText(content, 5000)) return json({ error: "답변 내용을 입력해주세요." }, 400);
+    if (typeof code === "string" && code.length > 50000) return json({ error: "코드는 50,000자 이하로 입력해주세요." }, 400);
     const { data: comment, error } = await supabase.from("archive_comments")
-      .insert({ post_id: String(postId), author_name: typeof authorName === "string" && authorName.trim() ? authorName.trim().slice(0, 30) : "익명", content: String(content).trim() })
+      .insert({
+        post_id: String(postId),
+        author_name: typeof authorName === "string" && authorName.trim() ? authorName.trim().slice(0, 30) : "익명",
+        content: String(content).trim(),
+        code_language: typeof codeLanguage === "string" && codeLanguage.length <= 30 ? codeLanguage : "text",
+        code: typeof code === "string" ? code : "",
+      })
       .select().single();
     if (error || !comment) return json({ error: error?.message ?? "답변을 저장하지 못했습니다." }, 400);
     const { error: secretError } = await supabase.from("archive_comment_secrets").insert({ comment_id: comment.id, password_hash: await hash(String(password)) });

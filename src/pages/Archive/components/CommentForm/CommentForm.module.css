@@ -1,7 +1,11 @@
 .form { display: grid; gap: 0.75rem; margin-top: 1rem; }
 .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-.form input, .form textarea { width: 100%; padding: 0.75rem 1rem; color: var(--gray-900); background: var(--gray-0); border: 1px solid var(--gray-300); border-radius: var(--radius-md); font: var(--font-body2); }
+.form input, .form textarea, .form select { width: 100%; padding: 0.75rem 1rem; color: var(--gray-900); background: var(--gray-0); border: 1px solid var(--gray-300); border-radius: var(--radius-md); font: var(--font-body2); }
 .form textarea { resize: vertical; }
+.codeFields { display: grid; gap: 0.75rem; padding-top: 0.25rem; }
+.codeFields label { display: grid; gap: 0.45rem; color: var(--gray-700); font: var(--font-small); font-weight: 700; }
+.codeFields label span { color: var(--gray-500); font-weight: 400; }
+.code { color: var(--gray-0) !important; background: var(--gray-900) !important; border-color: var(--gray-900) !important; font-family: Consolas, monospace !important; }
 .form p { color: #b42318; font: var(--font-small); }
 .form button { justify-self: end; min-height: 2.5rem; padding: 0 1rem; color: white; background: var(--blue-700); border-radius: var(--radius-pill); font: var(--font-small); font-weight: 700; }
 @media (max-width: 600px) { .inputs { grid-template-columns: 1fr; } }

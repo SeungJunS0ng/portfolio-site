@@ -72,6 +72,8 @@ export type ArchiveComment = {
   post_id: string;
   author_name: string;
   content: string;
+  code_language: string;
+  code: string;
   created_at: string;
   updated_at?: string;
 };
