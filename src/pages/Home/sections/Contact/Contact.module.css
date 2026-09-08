@@ -1,6 +1,6 @@
 .section {
   padding-top: 2rem;
-  padding-bottom: 6rem;
+  padding-bottom: 11.5rem;
 }
 
 .description {
@@ -75,7 +75,7 @@
 
 @media (max-width: 720px) {
   .section {
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
   }
 
   .cards {
