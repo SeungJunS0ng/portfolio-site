@@ -60,15 +60,17 @@ export function About() {
           <time dateTime="2026-07-06/2026-12-28">
             2026. 07. 06 — 2026. 12. 28
           </time>
-          <Link to="/archive" className={styles.archiveLink}>
-            Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
-          </Link>
         </aside>
       </div>
-      <aside className={styles.profile} aria-label="프로필 이미지 영역">
-        <span>PROFILE IMAGE</span>
-        <p>사진 추가 예정</p>
-      </aside>
+      <div className={styles.profileColumn}>
+        <aside className={styles.profile} aria-label="프로필 이미지 영역">
+          <span>PROFILE IMAGE</span>
+          <p>사진 추가 예정</p>
+        </aside>
+        <Link to="/archive" className={styles.archiveLink}>
+          Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
     </section>
   );
 }
