@@ -50,14 +50,6 @@ export function About() {
               </a>
             </dd>
           </div>
-          <div className={styles.archiveDetails}>
-            <dt>Archive</dt>
-            <dd>
-              <Link to="/archive" className={styles.archiveLink}>
-                개발 기록 보러가기 <span aria-hidden="true">↗</span>
-              </Link>
-            </dd>
-          </div>
         </dl>
         <aside className={styles.bootcamp} aria-label="현대오토에버 부트캠프 참여 정보">
           <div className={styles.bootcampTop}>
@@ -68,6 +60,9 @@ export function About() {
           <time dateTime="2026-07-06/2026-12-28">
             2026. 07. 06 — 2026. 12. 28
           </time>
+          <Link to="/archive" className={styles.archiveLink}>
+            개발 기록 보러가기 <span aria-hidden="true">↗</span>
+          </Link>
         </aside>
       </div>
       <aside className={styles.profile} aria-label="프로필 이미지 영역">

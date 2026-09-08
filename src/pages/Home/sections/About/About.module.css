@@ -6,8 +6,10 @@
 .introLead { color: var(--gray-900); font: var(--font-h3); font-weight: 700; letter-spacing: -0.03em; line-height: 1.45; }
 .introDescription { margin-top: 0.75rem; color: var(--gray-700); font: var(--font-body2); line-height: 1.7; }
 .introDescription strong { color: var(--gray-900); font-weight: 700; }
-.profileDetails { grid-column: 1; display: grid; gap: 1.5rem; width: 100%; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-300); }
-.profileDetails div { display: grid; gap: 0.45rem; min-width: 0; }
+.profileDetails { grid-column: 1; display: grid; width: 100%; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--gray-300); }
+.profileDetails div { display: grid; gap: 0.45rem; min-width: 0; padding: 1.25rem 0; border-bottom: 1px solid var(--gray-200); }
+.profileDetails div:first-child { padding-top: 0; }
+.profileDetails div:last-child { padding-bottom: 0; border-bottom: 0; }
 .profileDetails dt { color: var(--gray-900); font: var(--font-body2); font-weight: 700; }
 .profileDetails dd { color: var(--gray-700); font: var(--font-small); }
 .contactDetails { margin-top: 0.25rem; }
@@ -16,8 +18,7 @@
 .contactDetails a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.2rem; }
 .contactDetails svg { flex: 0 0 auto; width: 1rem; height: 1rem; fill: currentColor; }
 .contactDetails a:nth-child(-n + 2) svg { fill: none; }
-.archiveDetails { margin-top: 0.25rem; }
-.archiveLink { display: inline-flex; align-items: center; gap: 0.35rem; width: fit-content; color: var(--blue-700); font: var(--font-small); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 0.15rem; transition: gap 160ms ease, color 160ms ease; }
+.archiveLink { display: inline-flex; align-items: center; gap: 0.35rem; width: fit-content; margin-top: 0.35rem; color: var(--blue-700); font: var(--font-small); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 0.15rem; transition: gap 160ms ease, color 160ms ease; }
 .archiveLink:hover { gap: 0.55rem; color: var(--blue-900); }
 .bootcamp { grid-column: 2; align-self: start; justify-self: start; display: grid; gap: 0.65rem; width: min(100%, 20rem); margin-top: 1.75rem; margin-left: -1rem; color: var(--gray-700); }
 .bootcampTop { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
