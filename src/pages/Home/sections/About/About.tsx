@@ -8,11 +8,11 @@ export function About() {
         <h1 className={styles.sectionTitle}>ABOUT ME</h1>
         <div className={styles.introduction}>
           <p className={styles.introLead}>
-            문제를 구조화하고, 안정적으로 동작하는 서비스를 만듭니다.
+            안녕하세요, 백엔드 개발자 송승준입니다.
           </p>
           <p className={styles.introDescription}>
-            Spring Boot와 JPA를 기반으로 데이터 흐름을 설계하는 백엔드 개발자
-            <strong> 송승준</strong>입니다.
+            Spring Boot와 JPA를 기반으로 데이터 흐름을 설계하고,
+            <strong> 안정적인 API</strong>를 구현합니다.
           </p>
         </div>
         <dl className={styles.profileDetails}>
