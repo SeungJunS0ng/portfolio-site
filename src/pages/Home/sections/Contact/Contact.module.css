@@ -73,6 +73,26 @@
   font: var(--font-small);
 }
 
+.archiveLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-top: 0.75rem;
+  color: var(--blue-700);
+  font: var(--font-small);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.15rem;
+  transition: gap 160ms ease, color 160ms ease;
+}
+
+.archiveLink:hover {
+  gap: 0.55rem;
+  color: var(--blue-900);
+}
+
 @media (max-width: 720px) {
   .section {
     padding-top: 4rem;

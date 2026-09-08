@@ -1,4 +1,5 @@
 import styles from "./Contact.module.css";
+import { Link } from "react-router-dom";
 
 export function Contact() {
   return (
@@ -67,6 +68,9 @@ export function Contact() {
       </div>
 
       <p className={styles.message}>언제든 편하게 연락주세요 :)</p>
+      <Link to="/archive" className={styles.archiveLink}>
+        개발 기록 보러가기 <span aria-hidden="true">↗</span>
+      </Link>
     </section>
   );
 }
