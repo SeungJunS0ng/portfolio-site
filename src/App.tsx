@@ -12,6 +12,7 @@ import { navigation } from "./data/navigation";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { archivePostsQueryOptions } from "./hooks/useArchivePosts";
 import { Home } from "./pages/Home/Home";
+import { scrollToSection } from "./utils/scrollToSection";
 
 const Archive = lazy(() =>
   import("./pages/Archive/Archive").then(({ Archive: Page }) => ({ default: Page })),
@@ -38,16 +39,6 @@ function ArchiveLoadingFallback() {
       </div>
     </main>
   );
-}
-
-function scrollToSection(id: string, behavior: ScrollBehavior) {
-  const target = document.getElementById(id);
-  if (!target) return;
-
-  const contactOffset = id === "contact" ? 72 : 0;
-  const top = target.getBoundingClientRect().top + window.scrollY - contactOffset;
-
-  window.scrollTo({ top: Math.max(0, top), behavior });
 }
 
 function AppLayout() {

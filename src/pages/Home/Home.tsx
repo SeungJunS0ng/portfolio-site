@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Footer } from "../../components/common/Footer/Footer";
 import { FloatingContact } from "../../components/common/FloatingContact/FloatingContact";
 import { TopButton } from "../../components/common/TopButton/TopButton";
+import { scrollToSection } from "../../utils/scrollToSection";
 import { About } from "./sections/About/About";
 import { Contact } from "./sections/Contact/Contact";
 import { Experience } from "./sections/Experience/Experience";
@@ -12,7 +13,7 @@ import styles from "./Home.module.css";
 export function Home() {
   useEffect(() => {
     const sectionId = window.location.hash.slice(1);
-    if (sectionId) document.getElementById(sectionId)?.scrollIntoView();
+    if (sectionId) scrollToSection(sectionId, "auto");
   }, []);
 
   return (
