@@ -61,7 +61,7 @@ export function About() {
             2026. 07. 06 — 2026. 12. 28
           </time>
           <Link to="/archive" className={styles.archiveLink}>
-            개발 기록 보러가기 <span aria-hidden="true">↗</span>
+            Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
           </Link>
         </aside>
       </div>
