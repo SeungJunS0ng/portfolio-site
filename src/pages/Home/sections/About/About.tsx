@@ -48,6 +48,14 @@ export function About() {
                 </svg>
                 github.com/SeungJunS0ng
               </a>
+              <Link to="/archive" className={styles.archiveContactLink}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16v5H4z" />
+                  <path d="M6 9v11h12V9" />
+                  <path d="M10 13h4" />
+                </svg>
+                Archive · 개발 기록 보러가기 ↗
+              </Link>
             </dd>
           </div>
         </dl>
@@ -62,15 +70,10 @@ export function About() {
           </time>
         </aside>
       </div>
-      <div className={styles.profileColumn}>
-        <aside className={styles.profile} aria-label="프로필 이미지 영역">
-          <span>PROFILE IMAGE</span>
-          <p>사진 추가 예정</p>
-        </aside>
-        <Link to="/archive" className={styles.archiveLink}>
-          Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
-        </Link>
-      </div>
+      <aside className={styles.profile} aria-label="프로필 이미지 영역">
+        <span>PROFILE IMAGE</span>
+        <p>사진 추가 예정</p>
+      </aside>
     </section>
   );
 }
