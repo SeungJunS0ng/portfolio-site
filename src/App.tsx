@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback } from "react";
+import { lazy, Suspense, useCallback, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import {
   BrowserRouter,
@@ -46,6 +46,12 @@ function AppLayout() {
   const queryClient = useQueryClient();
   const activeSection = useActiveSection(navigation.map((item) => item.id));
 
+  useEffect(() => {
+    if (location.pathname.startsWith("/archive")) {
+      window.scrollTo({ top: 0, left: 0 });
+    }
+  }, [location.pathname]);
+
   const prefetchArchive = useCallback((id: string) => {
     if (id !== "archive") return;
 
@@ -57,6 +63,7 @@ function AppLayout() {
     (id: string) => {
       if (id === "archive") {
         navigate("/archive");
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         return;
       }
 
