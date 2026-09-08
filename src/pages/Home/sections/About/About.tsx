@@ -26,7 +26,8 @@ export function About() {
             <dd>정보처리기사 · SQLD</dd>
           </div>
         </dl>
-        <dl className={styles.contactPanel}>
+      </div>
+      <dl className={styles.contactPanel}>
           <div>
             <dt>Phone &amp; Email &amp; GitHub</dt>
             <dd>
@@ -51,8 +52,7 @@ export function About() {
               </a>
             </dd>
           </div>
-        </dl>
-      </div>
+      </dl>
       <aside className={styles.profile} aria-label="프로필 이미지 영역">
         <span>PROFILE IMAGE</span>
         <p>사진 추가 예정</p>
