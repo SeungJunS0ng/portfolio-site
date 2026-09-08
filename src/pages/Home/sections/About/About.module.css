@@ -1,11 +1,12 @@
 .section { min-height: 38rem; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr); gap: 3rem; align-items: center; padding: 6rem 3rem; }
-.content { display: flex; flex-direction: column; align-items: flex-start; }
+.content { display: grid; grid-template-columns: 16rem minmax(0, 1fr); column-gap: 3rem; align-content: start; align-items: start; }
+.content :global(.section-label), .sectionTitle, .introduction { grid-column: 1 / -1; }
 .sectionTitle { width: min(100%, 34rem); padding-bottom: 0.75rem; border-bottom: 3px solid var(--blue-100); font: var(--font-h1); letter-spacing: -0.04em; }
 .introduction { max-width: 34rem; margin-top: 1.5rem; }
 .introLead { color: var(--gray-900); font: var(--font-h3); font-weight: 700; letter-spacing: -0.03em; line-height: 1.45; }
 .introDescription { margin-top: 0.75rem; color: var(--gray-700); font: var(--font-body2); line-height: 1.7; }
 .introDescription strong { color: var(--gray-900); font-weight: 700; }
-.profileDetails { display: grid; gap: 1.5rem; width: min(100%, 34rem); margin-top: 1.75rem; }
+.profileDetails { grid-column: 1; display: grid; gap: 1.5rem; width: 100%; margin-top: 1.75rem; }
 .profileDetails div { display: grid; gap: 0.45rem; min-width: 0; }
 .profileDetails dt { color: var(--gray-900); font: var(--font-body2); font-weight: 700; }
 .profileDetails dd { color: var(--gray-700); font: var(--font-small); }
@@ -15,12 +16,15 @@
 .contactDetails a:hover { color: var(--blue-700); text-decoration: underline; text-underline-offset: 0.2rem; }
 .contactDetails svg { flex: 0 0 auto; width: 1rem; height: 1rem; fill: currentColor; }
 .contactDetails a:nth-child(-n + 2) svg { fill: none; }
-.bootcamp { align-self: start; justify-self: start; display: grid; gap: 0.75rem; width: min(100%, 17rem); min-height: 19rem; margin-top: 6.5rem; padding: 1.5rem; color: var(--gray-700); background: linear-gradient(145deg, var(--gray-0), var(--blue-50)); border: 1px solid var(--blue-200); border-radius: var(--radius-lg); box-shadow: 0.75rem 0.75rem 0 var(--blue-50); }
+.bootcamp { grid-column: 2; align-self: start; justify-self: start; display: grid; gap: 0.75rem; width: min(100%, 22rem); min-height: 13rem; margin-top: 6rem; padding: 1.5rem; color: var(--gray-700); background: linear-gradient(145deg, var(--gray-0), var(--blue-50)); border: 1px solid var(--blue-200); border-radius: var(--radius-lg); box-shadow: 0.75rem 0.75rem 0 var(--blue-50); }
 .bootcampTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
 .bootcampTop img { width: 8.5rem; height: auto; object-fit: contain; }
 .bootcampTop span { flex: 0 0 auto; padding: 0.25rem 0.5rem; color: var(--blue-700); background: var(--blue-100); border-radius: var(--radius-pill); font: var(--font-small); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.06em; }
 .bootcampLabel { align-self: end; color: var(--blue-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .bootcamp h3 { color: var(--gray-900); font: var(--font-h3); letter-spacing: -0.03em; }
 .bootcamp time { color: var(--gray-700); font: var(--font-small); }
-@media (max-width: 720px) { .section { min-height: auto; grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; } .bootcamp { order: -1; width: min(100%, 18rem); min-height: 18rem; margin: 0 auto; } }
-@media (max-width: 480px) { .section { padding: 4rem 1.25rem; } .sectionTitle { font-size: 1.75rem; } .introduction { margin-top: 1.25rem; } .introLead { font-size: 1.25rem; } .introDescription { font-size: 1rem; } .profileDetails { gap: 1.25rem; margin-top: 1.5rem; } .contactDetails a { overflow-wrap: anywhere; } .bootcamp { min-height: 15rem; box-shadow: 0.5rem 0.5rem 0 var(--blue-50); } }
+.profile { position: relative; align-self: start; justify-self: start; width: min(100%, 17rem); aspect-ratio: 4 / 5; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 19rem; margin-top: 6.5rem; overflow: hidden; color: var(--gray-500); background: linear-gradient(145deg, var(--gray-100), var(--blue-50)); border: 1px dashed var(--blue-300); border-radius: var(--radius-lg); box-shadow: 0.75rem 0.75rem 0 var(--blue-50); }
+.profile span { color: var(--gray-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
+.profile p { margin-top: 0.5rem; font: var(--font-small); }
+@media (max-width: 720px) { .section { min-height: auto; grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; } .content { display: flex; flex-direction: column; align-items: flex-start; } .bootcamp { width: min(100%, 22rem); min-height: 0; margin: 1.5rem 0 0; } .profile { order: -1; width: min(100%, 18rem); min-height: 18rem; margin: 0 auto; } }
+@media (max-width: 480px) { .section { padding: 4rem 1.25rem; } .sectionTitle { font-size: 1.75rem; } .introduction { margin-top: 1.25rem; } .introLead { font-size: 1.25rem; } .introDescription { font-size: 1rem; } .profileDetails { gap: 1.25rem; margin-top: 1.5rem; } .contactDetails a { overflow-wrap: anywhere; } .bootcamp { min-height: 0; box-shadow: 0.5rem 0.5rem 0 var(--blue-50); } .profile { min-height: 15rem; box-shadow: 0.5rem 0.5rem 0 var(--blue-50); } }

@@ -50,17 +50,21 @@ export function About() {
             </dd>
           </div>
         </dl>
+        <aside className={styles.bootcamp} aria-label="현대오토에버 부트캠프 참여 정보">
+          <div className={styles.bootcampTop}>
+            <img src="/images/hyundai-autoever.png" alt="Hyundai AutoEver" />
+            <span>IN PROGRESS</span>
+          </div>
+          <p className={styles.bootcampLabel}>HYUNDAI AUTOEVER</p>
+          <h3>부트캠프 참여 중</h3>
+          <time dateTime="2026-07-06/2026-12-28">
+            2026. 07. 06 — 2026. 12. 28
+          </time>
+        </aside>
       </div>
-      <aside className={styles.bootcamp} aria-label="현대오토에버 부트캠프 참여 정보">
-        <div className={styles.bootcampTop}>
-          <img src="/images/hyundai-autoever.png" alt="Hyundai AutoEver" />
-          <span>IN PROGRESS</span>
-        </div>
-        <p className={styles.bootcampLabel}>HYUNDAI AUTOEVER</p>
-        <h3>부트캠프 참여 중</h3>
-        <time dateTime="2026-07-06/2026-12-28">
-          2026. 07. 06 — 2026. 12. 28
-        </time>
+      <aside className={styles.profile} aria-label="프로필 이미지 영역">
+        <span>PROFILE IMAGE</span>
+        <p>사진 추가 예정</p>
       </aside>
     </section>
   );
