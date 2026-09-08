@@ -39,5 +39,11 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 1rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .header nav {
+    width: 100%;
+    min-width: 0;
   }
 }

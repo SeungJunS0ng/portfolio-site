@@ -9,6 +9,11 @@
 .content a { color: var(--blue-700); font: var(--font-body2); font-weight: 700; text-decoration: underline; text-underline-offset: 0.25rem; }
 .list { display: grid; gap: 1rem; margin: 2rem 0; }
 .loadMoreIndicator { min-height: 3rem; margin-bottom: 2rem; color: var(--gray-500); font: var(--font-small); text-align: center; }
+.skeletonList { display: grid; gap: 1rem; margin: 2rem 0; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skeletonCard { height: 10rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); background: linear-gradient(90deg, var(--gray-100) 25%, var(--blue-50) 50%, var(--gray-100) 75%); background-size: 200% 100%; animation: archive-skeleton 1.4s ease-in-out infinite; }
+
+@keyframes archive-skeleton { to { background-position: -200% 0; } }
 
 .filters {
   display: flex;

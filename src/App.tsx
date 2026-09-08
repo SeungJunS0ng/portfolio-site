@@ -26,6 +26,20 @@ const ArchiveWrite = lazy(() =>
   import("./pages/Archive/ArchiveWrite").then(({ ArchiveWrite: Page }) => ({ default: Page })),
 );
 
+function ArchiveLoadingFallback() {
+  return (
+    <main className="route-loading" role="status">
+      <span className="route-loading__label">Archive 화면을 불러오는 중입니다.</span>
+      <div className="route-loading__content" aria-hidden="true">
+        <div className="route-loading__title" />
+        <div className="route-loading__filters" />
+        <div className="route-loading__card" />
+        <div className="route-loading__card" />
+      </div>
+    </main>
+  );
+}
+
 function AppLayout() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -68,7 +82,7 @@ function AppLayout() {
         onNavigate={handleNavigate}
         onNavigateIntent={prefetchArchive}
       />
-      <Suspense fallback={<main className="route-loading" role="status">화면을 불러오는 중입니다.</main>}>
+      <Suspense fallback={<ArchiveLoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/archive" element={<Archive />} />

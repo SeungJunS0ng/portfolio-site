@@ -83,7 +83,13 @@ export function Archive() {
           </button>
         </div>
 
-        {isPending && <p>불러오는 중입니다.</p>}
+        {isPending && (
+          <div className={styles.skeletonList} role="status">
+            <span className={styles.srOnly}>글을 불러오는 중입니다.</span>
+            <div className={styles.skeletonCard} aria-hidden="true" />
+            <div className={styles.skeletonCard} aria-hidden="true" />
+          </div>
+        )}
 
         {isError && (
           <p role="alert">
