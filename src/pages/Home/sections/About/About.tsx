@@ -12,7 +12,7 @@ export function About() {
           </p>
           <p className={styles.introDescription}>
             Spring Boot와 JPA를 기반으로 데이터 흐름을 설계하고,
-            <strong> 안정적인 API</strong>를 구현합니다.
+            <strong> 서비스가 안정적으로 운영되는 방식</strong>을 고민합니다.
           </p>
         </div>
         <dl className={styles.profileDetails}>
