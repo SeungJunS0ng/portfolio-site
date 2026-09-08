@@ -1,8 +1,10 @@
 .section { min-height: 38rem; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr); gap: 4rem; align-items: center; padding: 6rem 3rem; }
 .content { display: flex; flex-direction: column; align-items: flex-start; }
 .sectionTitle { width: min(100%, 34rem); padding-bottom: 0.75rem; border-bottom: 3px solid var(--blue-100); font: var(--font-h1); letter-spacing: -0.04em; }
-.introduction { max-width: 34rem; margin-top: 1rem; color: var(--gray-700); font: var(--font-body2); font-size: 1.125rem; line-height: 1.7; }
-.introduction strong { color: var(--gray-900); font-weight: 700; }
+.introduction { max-width: 34rem; margin-top: 1.5rem; }
+.introLead { color: var(--gray-900); font: var(--font-h3); font-weight: 700; letter-spacing: -0.03em; line-height: 1.45; }
+.introDescription { margin-top: 0.75rem; color: var(--gray-700); font: var(--font-body2); line-height: 1.7; }
+.introDescription strong { color: var(--gray-900); font-weight: 700; }
 .profileDetails { display: grid; gap: 1.5rem; width: min(100%, 34rem); margin-top: 1.75rem; }
 .profileDetails div { display: grid; gap: 0.45rem; min-width: 0; }
 .profileDetails dt { color: var(--gray-900); font: var(--font-body2); font-weight: 700; }
@@ -11,4 +13,4 @@
 .profile span { color: var(--gray-700); font: var(--font-small); font-weight: 700; letter-spacing: 0.08em; }
 .profile p { margin-top: 0.5rem; font: var(--font-small); }
 @media (max-width: 720px) { .section { min-height: auto; grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; } .profile { order: -1; width: min(100%, 18rem); min-height: 18rem; margin: 0 auto; } }
-@media (max-width: 480px) { .section { padding: 4rem 1.25rem; } .sectionTitle { font-size: 1.75rem; } .introduction { margin-top: 1.25rem; font-size: 1rem; } .profileDetails { gap: 1.25rem; margin-top: 1.5rem; } .profile { min-height: 15rem; box-shadow: 0.5rem 0.5rem 0 var(--blue-50); } }
+@media (max-width: 480px) { .section { padding: 4rem 1.25rem; } .sectionTitle { font-size: 1.75rem; } .introduction { margin-top: 1.25rem; } .introLead { font-size: 1.25rem; } .introDescription { font-size: 1rem; } .profileDetails { gap: 1.25rem; margin-top: 1.5rem; } .profile { min-height: 15rem; box-shadow: 0.5rem 0.5rem 0 var(--blue-50); } }

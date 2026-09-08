@@ -6,10 +6,15 @@ export function About() {
       <div className={styles.content}>
         <p className="section-label">01 / ABOUT</p>
         <h1 className={styles.sectionTitle}>ABOUT ME</h1>
-        <p className={styles.introduction}>
-          안정적인 데이터 흐름과 효율적인 API 설계를 고민하는 백엔드 개발자
-          <strong> 송승준</strong>입니다.
-        </p>
+        <div className={styles.introduction}>
+          <p className={styles.introLead}>
+            문제를 구조화하고, 안정적으로 동작하는 서비스를 만듭니다.
+          </p>
+          <p className={styles.introDescription}>
+            Spring Boot와 JPA를 기반으로 데이터 흐름을 설계하는 백엔드 개발자
+            <strong> 송승준</strong>입니다.
+          </p>
+        </div>
         <dl className={styles.profileDetails}>
           <div>
             <dt>자격사항</dt>
