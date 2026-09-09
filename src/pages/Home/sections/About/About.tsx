@@ -64,8 +64,7 @@ export function About() {
       </div>
       <div className={styles.profileColumn}>
         <aside className={styles.profile} aria-label="프로필 이미지 영역">
-          <span>PROFILE IMAGE</span>
-          <p>사진 추가 예정</p>
+          <img src="/images/profile-cat.jpg" alt="나무 아래에 있는 고양이" decoding="async" />
         </aside>
         <Link to="/archive" className={styles.archiveLink}>
           Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
