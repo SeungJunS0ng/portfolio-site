@@ -20,11 +20,7 @@ export function About() {
         <dl className={styles.profileDetails}>
           <div>
             <dt>학력</dt>
-            <dd>00대학교 · 컴퓨터공학과</dd>
-          </div>
-          <div>
-            <dt>자격사항</dt>
-            <dd>정보처리기사 · SQLD</dd>
+            <dd>한세대학교 · 컴퓨터공학과</dd>
           </div>
           <div className={styles.contactDetails}>
             <dt>Phone &amp; Email &amp; GitHub</dt>
@@ -64,7 +60,7 @@ export function About() {
       </div>
       <div className={styles.profileColumn}>
         <aside className={styles.profile} aria-label="프로필 이미지 영역">
-          <img src="/images/profile-cat.jpg" alt="나무 아래에 있는 고양이" decoding="async" />
+          <img src="/images/profile.png" alt="송승준 프로필 사진" decoding="async" />
         </aside>
         <Link to="/archive" className={styles.archiveLink}>
           Archive · 개발 기록 보러가기 <span aria-hidden="true">↗</span>
