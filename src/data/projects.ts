@@ -2,6 +2,28 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    id: "fleaflea",
+    title: "FleaFlea",
+    badge: "Backend",
+    description:
+      "친구·지인과 물건을 판매·나눔·대여·교환하는 팀 프로젝트입니다. 물건을 도감에 등록하고, 초대 링크로 사람들을 모아 플리마켓을 열 수 있습니다.",
+    period: "2026. 09 — 현재",
+    role: "도감·마켓·채팅 개발 · 동시성 검증 · AWS 배포",
+    stack: ["Java", "Spring Boot", "JPA", "QueryDSL", "PostgreSQL", "Redis", "WebSocket", "k6", "AWS"],
+    link: "https://github.com/hyundai-autoever-team3/fleaflea-backend",
+    demo: "https://fleaflea.app",
+    study: "https://github.com/hyundai-autoever-team3/fleaflea-backend/wiki",
+    highlights: [
+      "도감·마켓 API와 WebSocket 기반 1:1 채팅 구현",
+      "마켓 변경 작업에 Redis 분산 락을 적용해 동시 수정 시 변경 유실 방지",
+      "Redis Pub/Sub로 서로 다른 서버에 연결된 사용자에게 채팅 이벤트 전달",
+      "별도 GCP 서버에서 k6 테스트로 데이터 정합성·응답 지연·처리량 비교",
+    ],
+    result:
+      "동일 마켓 동시 수정 100쌍 테스트에서 변경 유실이 76건에서 0건으로 감소했습니다. 초당 100요청 조건의 p95 응답 시간은 약 75ms에서 124ms로 증가해, 정합성을 확보하는 데 드는 대기 비용도 확인했습니다.",
+    ongoing: "GCP·Cloud Storage 이전 및 Blue/Green 배포 구성",
+  },
+  {
     id: "monitoring-dashboard",
     title: "산업 장비 통합 모니터링 대시보드",
     badge: "Backend",

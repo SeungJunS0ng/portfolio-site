@@ -23,6 +23,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <li key={highlight}>{highlight}</li>
           ))}
         </ul>
+        {project.result && <p className={styles.result}>{project.result}</p>}
+        {project.ongoing && <p className={styles.ongoing}>진행 중 · {project.ongoing}</p>}
         <ul className={styles.stack}>
           {project.stack.map((item) => (
             <li key={item}>{item}</li>
@@ -37,7 +39,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.demo && (
             <li>
               <a href={project.demo} target="_blank" rel="noreferrer">
-                Demo ↗
+                서비스 ↗
+              </a>
+            </li>
+          )}
+          {project.study && (
+            <li>
+              <a href={project.study} target="_blank" rel="noreferrer">
+                기술·검증 기록 ↗
               </a>
             </li>
           )}

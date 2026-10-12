@@ -30,6 +30,9 @@ export type Project = {
   stack: string[];
   link: string;
   demo?: string;
+  study?: string;
+  result?: string;
+  ongoing?: string;
   highlights: string[];
   image?: string;
 };
